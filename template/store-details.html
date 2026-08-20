@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Store - NearBy Dukan</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Existing website CSS -->
+    <link rel="stylesheet" href="home.css">
+
+    <!-- Store Details CSS -->
+    <link rel="stylesheet" href="store-details.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo-area">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-shop"></i>
+        </div>
+
+        <div>
+            <h2>NearBy Dukan</h2>
+            <span>Apki Dukan, Ab Online</span>
+        </div>
+
+    </div>
+
+
+    <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Patna, Bihar</span>
+    </div>
+
+
+    <nav>
+
+        <a href="home.html">Home</a>
+
+        <a href="stores.html">Stores</a>
+
+        <a href="categories.html">Categories</a>
+
+        <a href="offers.html">Offers</a>
+
+        <a href="about.html">About Us</a>
+
+    </nav>
+
+
+    <div class="navbar-actions">
+
+        <a href="cart.html" class="cart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cartCount">0</span>
+</a>
+        <button class="login-btn">
+            Login
+        </button>
+    </div>
+</header>
+<!-- ================= STORE HEADER ================= -->
+<section class="store-header">
+    <div class="store-header-inner">
+        <!-- Store Image -->
+        <div class="store-main-image">
+            <i class="fa-solid fa-store"></i>
+        </div>
+        <!-- Store Information -->
+        <div class="store-information">
+            <div class="store-title-row">
+                <div>
+                    <span class="open-status">
+                        <i class="fa-solid fa-circle"></i>
+                        OPEN
+                    </span>
+
+                    <h1 id="storeName">
+                        Store Name
+                    </h1>
+                </div>
+                <button class="favorite-btn"
+                        onclick="toggleFavorite(this)">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+            </div>
+            <p id="storeDescription">
+                Local store near you
+            </p>
+            <div class="store-meta">
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <strong id="storeRating">4.5</strong>
+                </span>
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="storeDistance">0.2 km</span>
+                </span>
+                <span>
+                    <i class="fa-regular fa-clock"></i>
+                    <span id="storeTime">30–40 mins</span>
+                </span>
+                <span>
+                    <i class="fa-solid fa-truck"></i>
+                    Free Delivery
+                </span>
+            </div>
+            <div class="store-address">
+                <i class="fa-solid fa-location-dot"></i>
+                <span id="storeAddress">
+                    Main Road, Patna, Bihar
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SEARCH ================= -->
+
+<section class="product-search-section">
+
+    <div class="product-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="productSearch"
+            placeholder="Search products in this store..."
+            onkeyup="searchProducts()">
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CATEGORY FILTER ================= -->
+
+<section class="category-filter">
+
+    <button class="category-btn active"
+            onclick="filterCategory('all', this)">
+        All
+    </button>
+
+    <button class="category-btn"
+            onclick="filterCategory('grocery', this)">
+        Grocery
+    </button>
+
+    <button class="category-btn"
+            onclick="filterCategory('dairy', this)">
+        Dairy
+    </button>
+
+    <button class="category-btn"
+            onclick="filterCategory('snacks', this)">
+        Snacks
+    </button>
+
+    <button class="category-btn"
+            onclick="filterCategory('beverages', this)">
+        Beverages
+    </button>
+
+    <button class="category-btn"
+            onclick="filterCategory('household', this)">
+        Household
+    </button>
+
+    <button class="category-btn"
+            onclick="filterCategory('personal', this)">
+        Personal Care
+    </button>
+
+</section>
+<!-- ================= PRODUCTS ================= -->
+<main class="products-container">
+
+    <div class="products-top">
+
+        <div>
+
+            <h2 id="productsTitle">
+                Products
+            </h2>
+
+            <p id="productCount">
+                Products available in this store
+            </p>
+
+        </div>
+
+
+        <select id="sortProducts"
+                onchange="sortProducts()">
+
+            <option value="default">
+                Sort: Recommended
+            </option>
+
+            <option value="low">
+                Price: Low to High
+            </option>
+
+            <option value="high">
+                Price: High to Low
+            </option>
+
+            <option value="name">
+                Name: A-Z
+            </option>
+
+        </select>
+    </div>
+    <!-- Product Sections will be generated by JS -->
+    <div id="productSections"></div>
+</main>
+<!-- ================= CART SIDEBAR ================= -->
+<div class="cart-overlay"
+     id="cartOverlay"
+     onclick="closeCart()">
+</div>
+<aside class="cart-sidebar"
+       id="cartSidebar">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <button onclick="closeCart()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <div id="cartItems"
+         class="cart-items">
+
+        <div class="empty-cart">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <h3>Your cart is empty</h3>
+
+            <p>
+                Add products from the store.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+
+            <span>Total</span>
+
+            <strong id="cartTotal">
+                ₹0
+            </strong>
+
+        </div>
+
+
+        <button class="checkout-btn"
+                onclick="checkout()">
+
+            Proceed to Checkout
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<script src="store-details.js"></script>
+
+</body>
+
+</html>
