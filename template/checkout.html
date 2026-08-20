@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Local Store</title>
+
+    <link rel="stylesheet" href="url_for('static',filename='css/checkout.css')">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="checkout-header">
+        <div class="logo">
+            🏪 Local Store
+        </div>
+
+        <a  href="{{ url_for('cart') }}" class="back-cart">
+            ← Back to Cart
+        </a>
+    </header>
+
+
+    <!-- Main Checkout -->
+    <main class="checkout-container">
+
+        <div class="checkout-left">
+
+            <h1>Checkout</h1>
+            <p class="subtitle">Complete your order details</p>
+
+
+            <!-- Customer Details -->
+            <section class="checkout-card">
+
+                <h2>👤 Customer Details</h2>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input
+                            type="tel"
+                            id="mobile"
+                            placeholder="Enter mobile number"
+                            maxlength="10"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Delivery Address -->
+            <section class="checkout-card">
+
+                <h2>📍 Delivery Address</h2>
+
+                <div class="form-group">
+                    <label for="house">
+                        House / Flat / Shop No.
+                    </label>
+
+                    <input
+                        type="text"
+                        id="house"
+                        placeholder="House / Flat / Shop number"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="street">
+                        Street / Village
+                    </label>
+
+                    <input
+                        type="text"
+                        id="street"
+                        placeholder="Street, village or locality"
+                    >
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="city">City</label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            placeholder="City"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="district">District</label>
+
+                        <input
+                            type="text"
+                            id="district"
+                            placeholder="District"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="state">State</label>
+
+                        <input
+                            type="text"
+                            id="state"
+                            placeholder="State"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="pincode">Pincode</label>
+
+                        <input
+                            type="text"
+                            id="pincode"
+                            placeholder="6 digit pincode"
+                            maxlength="6"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="landmark">
+                        Landmark <span>(Optional)</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="landmark"
+                        placeholder="Nearby landmark"
+                    >
+                </div>
+
+            </section>
+
+
+            <!-- Delivery Option -->
+            <section class="checkout-card">
+
+                <h2>🚚 Delivery Option</h2>
+
+                <div class="option-container">
+
+                    <label class="option-box">
+
+                        <input
+                            type="radio"
+                            name="delivery"
+                            value="delivery"
+                            checked
+                        >
+
+                        <div>
+                            <strong>Home Delivery</strong>
+                            <p>Get your order delivered to your address</p>
+                        </div>
+
+                    </label>
+
+
+                    <label class="option-box">
+
+                        <input
+                            type="radio"
+                            name="delivery"
+                            value="pickup"
+                        >
+
+                        <div>
+                            <strong>Store Pickup</strong>
+                            <p>Collect your order from the local store</p>
+                        </div>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <!-- Payment -->
+            <section class="checkout-card">
+
+                <h2>💳 Payment Method</h2>
+
+                <div class="option-container">
+
+                    <label class="option-box">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="cod"
+                            checked
+                        >
+
+                        <div>
+                            <strong>Cash on Delivery</strong>
+                            <p>Pay when your order arrives</p>
+                        </div>
+
+                    </label>
+
+
+                    <label class="option-box">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="upi"
+                        >
+
+                        <div>
+                            <strong>UPI</strong>
+                            <p>Pay using UPI</p>
+                        </div>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- Order Summary -->
+        <aside class="checkout-right">
+
+            <section class="summary-card">
+
+                <h2>Order Summary</h2>
+
+                <div id="order-items">
+                    <!-- Products will come from cart -->
+                </div>
+
+
+                <div class="summary-line">
+                    <span>Subtotal</span>
+                    <span id="subtotal">₹0</span>
+                </div>
+
+
+                <div class="summary-line">
+                    <span>Delivery Charge</span>
+                    <span id="delivery-charge">₹0</span>
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <div class="total-line">
+                    <span>Total</span>
+                    <strong id="total">₹0</strong>
+                </div>
+
+
+                <button
+                    type="button"
+                    class="place-order-btn"
+                    onclick="placeOrder()"
+                >
+                    Place Order
+                </button>
+
+            </section>
+
+        </aside>
+
+    </main>
+
+
+    <script src="{{url_for('static',filename='js/checkout.js')}}"></script>
+
+
+</body>
+</html>
