@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Order Confirmed - NearBy Dukan</title>
+
+    <link rel="stylesheet" href="order-confirmation.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="confirmation-header">
+
+        <div class="logo">
+            🏪 NearBy Dukan
+        </div>
+
+        <a href="home.html">
+            Home
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="confirmation-container">
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <section class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h1>
+                Order Placed Successfully!
+            </h1>
+
+            <p>
+                Thank you for shopping with NearBy Dukan.
+            </p>
+
+            <div class="order-id-box">
+
+                <span>
+                    Order ID
+                </span>
+
+                <strong id="orderId">
+                    --
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ORDER DETAILS
+        ================================================== -->
+
+        <section class="details-card">
+
+            <h2>
+                Order Details
+            </h2>
+
+
+            <!-- CUSTOMER -->
+
+            <div class="detail-section">
+
+                <h3>
+                    👤 Customer Details
+                </h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="customerName">--</span>
+                </p>
+
+                <p>
+                    <strong>Mobile:</strong>
+                    <span id="customerMobile">--</span>
+                </p>
+
+            </div>
+
+
+
+            <!-- DELIVERY -->
+
+            <div class="detail-section">
+
+                <h3>
+                    🚚 Delivery Details
+                </h3>
+
+                <p>
+                    <strong>Option:</strong>
+                    <span id="deliveryOption">--</span>
+                </p>
+
+                <div id="addressSection">
+
+                    <p>
+                        <strong>Address:</strong>
+                    </p>
+
+                    <p id="address">
+                        --
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PAYMENT -->
+
+            <div class="detail-section">
+
+                <h3>
+                    💳 Payment
+                </h3>
+
+                <p>
+                    <strong>Method:</strong>
+                    <span id="paymentMethod">--</span>
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRODUCTS
+        ================================================== -->
+
+        <section class="products-card">
+
+            <h2>
+                Ordered Products
+            </h2>
+
+            <div id="orderedProducts">
+
+                <!-- Products will load here -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRICE SUMMARY
+        ================================================== -->
+
+        <section class="price-card">
+
+            <div class="price-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <span id="subtotal">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <span>
+                    Delivery Charge
+                </span>
+
+                <span id="deliveryCharge">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+            <div class="total-row">
+
+                <strong>
+                    Total
+                </strong>
+
+                <strong id="total">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BUTTONS
+        ================================================== -->
+
+        <div class="action-buttons">
+
+            <a
+                href="home.html"
+                class="home-btn"
+            >
+                Continue Shopping
+            </a>
+
+
+            <a
+                href="stores.html"
+                class="store-btn"
+            >
+                Browse Stores
+            </a>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 NearBy Dukan.
+            Support Local, Shop Local.
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="order-confirmation.js"></script>
+
+</body>
+
+</html>
