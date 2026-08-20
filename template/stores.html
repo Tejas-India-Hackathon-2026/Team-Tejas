@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stores | NearBy Dukan</title>
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="stores.css">
+    <link rel="stylesheet" href="auth.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo-section">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-shop"></i>
+        </div>
+
+        <div>
+            <div class="logo">
+                NearBy <span>Dukan</span>
+            </div>
+
+            <div class="tagline">
+                Apki Dukan, Ab Online
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Patna, Bihar</span>
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="home.html">Home</a>
+
+        <a href="stores.html" class="active">
+            Stores
+        </a>
+
+        <a href="categories.html">
+            Categories
+        </a>
+
+        <a href="offers.html">
+            Offers
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <div class="cart">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span class="cart-count">3</span>
+
+        </div>
+
+        <button class="login-btn" onclick="openLoginModal()">
+    Login / Sign Up
+</button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= PAGE HERO ================= -->
+
+<section class="stores-hero">
+
+    <div>
+
+        <div class="breadcrumb">
+            <a href="home.html">Home</a>
+            <span>/</span>
+            <strong>Stores</strong>
+        </div>
+
+
+        <h1>
+            Discover Stores <span>Near You</span>
+        </h1>
+
+        <p>
+            Apne aas-paas ki local dukano se shopping karein
+            aur apne local businesses ko support karein.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="store-search-section">
+
+    <div class="store-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="storeSearch"
+            placeholder="Search stores, shops..."
+        >
+
+        <button onclick="searchStores()">
+            Search
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="stores-container">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="filter-sidebar">
+
+        <div class="filter-header">
+
+            <h3>
+                <i class="fa-solid fa-filter"></i>
+                Filters
+            </h3>
+
+            <button onclick="clearFilters()">
+                Clear All
+            </button>
+
+        </div>
+
+
+        <!-- DISTANCE -->
+
+        <div class="filter-group">
+
+            <h4>Distance</h4>
+
+            <label>
+                <input type="radio" name="distance">
+                Within 1 km
+            </label>
+
+            <label>
+                <input type="radio" name="distance">
+                Within 3 km
+            </label>
+
+            <label>
+                <input type="radio" name="distance">
+                Within 5 km
+            </label>
+
+            <label>
+                <input type="radio" name="distance">
+                Within 10 km
+            </label>
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="filter-group">
+
+            <h4>Store Category</h4>
+
+            <label>
+                <input type="checkbox">
+                Grocery
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Pharmacy
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Bakery
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Dairy
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Electronics
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Stationery
+            </label>
+
+        </div>
+
+
+        <!-- RATING -->
+
+        <div class="filter-group">
+
+            <h4>Customer Rating</h4>
+
+            <label>
+                <input type="radio" name="rating">
+                ⭐ 4.5 & above
+            </label>
+
+            <label>
+                <input type="radio" name="rating">
+                ⭐ 4.0 & above
+            </label>
+
+            <label>
+                <input type="radio" name="rating">
+                ⭐ 3.5 & above
+            </label>
+
+        </div>
+
+
+        <!-- DELIVERY -->
+
+        <div class="filter-group">
+
+            <h4>Delivery</h4>
+
+            <label>
+                <input type="checkbox">
+                Fast Delivery
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Free Delivery
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Pickup Available
+            </label>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= STORE AREA ================= -->
+
+    <section class="store-results">
+
+
+        <div class="results-header">
+
+            <div>
+
+                <h2>
+                    Nearby Stores
+                </h2>
+
+                <p>
+                    24 stores found near you
+                </p>
+
+            </div>
+
+
+            <select id="sortStores">
+
+                <option value="near">
+                    Sort: Nearest
+                </option>
+
+                <option value="rating">
+                    Highest Rated
+                </option>
+
+                <option value="delivery">
+                    Fastest Delivery
+                </option>
+
+                <option value="popular">
+                    Most Popular
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- STORE GRID -->
+
+        <div class="store-grid" id="storeGrid">
+
+
+            <!-- STORE 1 -->
+
+            <div class="store-item"
+                 data-name="Sharma Kirana Store">
+
+                <div class="store-photo store-photo-1">
+
+                    <span class="open-badge">
+                        Open
+                    </span>
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+                <div class="store-info">
+                    <div class="store-title">
+                        <h3>
+                            Sharma Kirana Store
+                        </h3>
+
+                        <span class="rating-badge">
+                            ⭐ 4.5
+                        </span>
+
+                    </div>
+
+                    <p class="store-category">
+                        Grocery • Daily Essentials
+                    </p>
+
+
+                    <div class="store-location">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            0.2 km away
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            30-40 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="store-bottom">
+
+                        <span class="delivery">
+                            Free delivery
+                        </span>
+
+                        <button class="view-btn"
+                                onclick="openStore('Sharma')">
+                            View Store
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STORE 2 -->
+
+            <div class="store-item"
+                 data-name="Verma General Store">
+
+                <div class="store-photo store-photo-2">
+
+                    <span class="open-badge">
+                        Open
+                    </span>
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="store-info">
+
+                    <div class="store-title">
+
+                        <h3>
+                            Verma General Store
+                        </h3>
+
+                        <span class="rating-badge">
+                            ⭐ 4.2
+                        </span>
+
+                    </div>
+
+                    <p class="store-category">
+                        Grocery • Household
+                    </p>
+
+
+                    <div class="store-location">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            0.4 km away
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            25-35 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="store-bottom">
+
+                        <span class="delivery">
+                            Free delivery
+                        </span>
+
+                        <button class="view-btn"
+                                onclick="openStore('verma')">
+                            View Store
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STORE 3 -->
+
+            <div class="store-item"
+                 data-name="Gupta Provision Store">
+
+                <div class="store-photo store-photo-3">
+
+                    <span class="open-badge">
+                        Open
+                    </span>
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="store-info">
+
+                    <div class="store-title">
+
+                        <h3>
+                            Gupta Provision Store
+                        </h3>
+
+                        <span class="rating-badge">
+                            ⭐ 4.6
+                        </span>
+
+                    </div>
+
+                    <p class="store-category">
+                        Grocery • Beverages
+                    </p>
+
+
+                    <div class="store-location">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            0.6 km away
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            30-45 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="store-bottom">
+
+                        <span class="delivery">
+                            Free delivery
+                        </span>
+
+                        <button class="view-btn"
+                                onclick="openStore('gupta')">
+                            View Store
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STORE 4 -->
+
+            <div class="store-item"
+                 data-name="Patel Departmental Store">
+
+                <div class="store-photo store-photo-4">
+
+                    <span class="open-badge">
+                        Open
+                    </span>
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="store-info">
+
+                    <div class="store-title">
+
+                        <h3>
+                            Patel Departmental Store
+                        </h3>
+
+                        <span class="rating-badge">
+                            ⭐ 4.3
+                        </span>
+
+                    </div>
+
+                    <p class="store-category">
+                        Grocery • Personal Care
+                    </p>
+
+
+                    <div class="store-location">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            0.7 km away
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            35-50 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="store-bottom">
+
+                        <span class="delivery">
+                            Free delivery
+                        </span>
+
+                        <button class="view-btn"
+                                onclick="openStore('patel')">
+                            View Store
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STORE 5 -->
+
+            <div class="store-item"
+                 data-name="Kumar Dairy and Sweets">
+
+                <div class="store-photo store-photo-5">
+
+                    <span class="open-badge">
+                        Open
+                    </span>
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="store-info">
+
+                    <div class="store-title">
+
+                        <h3>
+                            Kumar Dairy & Sweets
+                        </h3>
+
+                        <span class="rating-badge">
+                            ⭐ 4.7
+                        </span>
+
+                    </div>
+
+                    <p class="store-category">
+                        Dairy • Bakery • Sweets
+                    </p>
+
+
+                    <div class="store-location">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            0.9 km away
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            20-30 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="store-bottom">
+
+                        <span class="delivery">
+                            Free delivery
+                        </span>
+
+                        <button class="view-btn"
+                                onclick="openStore('kumar')">
+                            View Store
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STORE 6 -->
+
+            <div class="store-item"
+                 data-name="Maa Laxmi Bakery">
+
+                <div class="store-photo store-photo-6">
+
+                    <span class="closed-badge">
+                        Closed
+                    </span>
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="store-info">
+
+                    <div class="store-title">
+
+                        <h3>
+                            Maa Laxmi Bakery
+                        </h3>
+
+                        <span class="rating-badge">
+                            ⭐ 4.4
+                        </span>
+
+                    </div>
+
+                    <p class="store-category">
+                        Bakery • Cakes • Snacks
+                    </p>
+
+
+                    <div class="store-location">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            1.1 km away
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            35-45 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="store-bottom">
+
+                        <span class="delivery">
+                            Pickup available
+                        </span>
+
+                        <button class="view-btn"
+                                onclick="openStore('laxmi')">
+                            View Store
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PAGINATION -->
+
+        <div class="pagination">
+
+            <button>
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <button class="page-active">
+                1
+            </button>
+
+            <button>
+                2
+            </button>
+
+            <button>
+                3
+            </button>
+
+            <button>
+                4
+            </button>
+
+            <button>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <i class="fa-solid fa-shop"></i>
+
+        NearBy <span>Dukan</span>
+
+    </div>
+
+    <p>
+        Apne local stores ko digital banayein.
+        Shop nearby. Support local.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="home.css">Home</a>
+        <a href="stores.html">Stores</a>
+        <a href="categories.html">Categories</a>
+        <a href="offers.html">Offers</a>
+        <a href="about.html">About Us</a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 NearBy Dukan. All Rights Reserved.
+    </p>
+
+</footer>
+<!-- =====================================================
+     AUTHENTICATION MODAL
+===================================================== -->
+
+<div class="auth-overlay" id="authOverlay">
+
+    <div class="auth-modal">
+
+        <!-- CLOSE BUTTON -->
+
+        <button class="auth-close"
+                onclick="closeAuthModal()">
+            &times;
+        </button>
+
+
+        <!-- =================================================
+             LOGIN SECTION
+        ================================================== -->
+
+        <div class="auth-page" id="loginPage">
+
+            <div class="auth-header">
+
+                <div class="auth-logo">
+                    <i class="fa-solid fa-shop"></i>
+                </div>
+
+                <h2>
+                    Welcome Back!
+                </h2>
+
+                <p>
+                    Login to your NearBy Dukan account
+                </p>
+
+            </div>
+
+
+            <form onsubmit="loginUser(event)">
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label>
+                            Password
+                        </label>
+
+                        <button
+                            type="button"
+                            class="forgot-btn"
+                            onclick="showForgotPassword()">
+
+                            Forgot Password?
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword('loginPassword', this)">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT TYPE -->
+
+                <div class="account-type-login">
+
+                    <label>
+                        Login as
+                    </label>
+
+                    <div class="login-type-options">
+
+                        <label class="radio-card">
+
+                            <input
+                                type="radio"
+                                name="loginType"
+                                value="customer"
+                                checked
+                            >
+
+                            <span>
+                                🛒 Customer
+                            </span>
+
+                        </label>
+
+
+                        <label class="radio-card">
+
+                            <input
+                                type="radio"
+                                name="loginType"
+                                value="seller"
+                            >
+
+                            <span>
+                                🏪 Seller
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
+                    Login
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <div class="auth-divider">
+
+                <span>
+                    OR
+                </span>
+
+            </div>
+
+
+            <div class="signup-question">
+
+                Don't have an account?
+
+                <button
+                    type="button"
+                    onclick="showAccountSelection()">
+
+                    Sign Up
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ACCOUNT TYPE SELECTION
+        ================================================== -->
+
+        <div class="auth-page hidden"
+             id="accountSelectionPage">
+
+            <div class="auth-header">
+
+                <div class="auth-logo">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <h2>
+                    Create Your Account
+                </h2>
+
+                <p>
+                    Choose the type of account you want
+                    to create.
+                </p>
+
+            </div>
+
+
+            <div class="account-selection">
+
+
+                <!-- CUSTOMER -->
+
+                <button
+                    class="account-choice customer-choice"
+                    onclick="showCustomerSignup()">
+
+                    <div class="choice-icon">
+                        🛒
+                    </div>
+
+                    <div class="choice-content">
+
+                        <h3>
+                            Create Customer Account
+                        </h3>
+
+                        <p>
+                            Find nearby stores, browse products
+                            and place orders.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+
+                <!-- SELLER -->
+
+                <button
+                    class="account-choice seller-choice"
+                    onclick="showSellerSignup()">
+
+                    <div class="choice-icon">
+                        🏪
+                    </div>
+
+                    <div class="choice-content">
+
+                        <h3>
+                            Create Seller Account
+                        </h3>
+
+                        <p>
+                            Take your local store online and
+                            reach nearby customers.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="back-login">
+
+                Already have an account?
+
+                <button
+                    onclick="showLogin()">
+
+                    Login
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CUSTOMER SIGN UP
+        ================================================== -->
+
+        <div class="auth-page signup-page hidden"
+             id="customerSignupPage">
+
+            <div class="signup-heading">
+
+                <button
+                    class="back-button"
+                    onclick="showAccountSelection()">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </button>
+
+                <div>
+
+                    <h2>
+                        Create Customer Account
+                    </h2>
+
+                    <p>
+                        Join NearBy Dukan and shop locally.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form onsubmit="createCustomerAccount(event)">
+
+
+                <!-- FULL NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        Full Name *
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL + MOBILE -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="customerEmail"
+                                placeholder="Email address"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Mobile Number *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="customerMobile"
+                                placeholder="Mobile number"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Create New Password *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="customerPassword"
+                                placeholder="Create password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('customerPassword', this)">
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Re-enter Password *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="customerConfirmPassword"
+                                placeholder="Confirm password"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ADDRESS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Address *
+                    </label>
+
+                    <div class="input-box textarea-box">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <textarea
+                            id="customerAddress"
+                            placeholder="House / Street / Landmark"
+                            required></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AREA + CITY -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Area *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-map-pin"></i>
+
+                            <input
+                                type="text"
+                                id="customerArea"
+                                placeholder="Area / Locality"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            City *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-city"></i>
+
+                            <input
+                                type="text"
+                                id="customerCity"
+                                placeholder="City"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STATE + PIN -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            State *
+                        </label>
+
+                        <select
+                            id="customerState"
+                            required>
+
+                            <option value="">
+                                Select State
+                            </option>
+
+                            <option>
+                                Bihar
+                            </option>
+
+                            <option>
+                                Jharkhand
+                            </option>
+
+                            <option>
+                                West Bengal
+                            </option>
+
+                            <option>
+                                Uttar Pradesh
+                            </option>
+
+                            <option>
+                                Delhi
+                            </option>
+
+                            <option>
+                                Maharashtra
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            PIN Code / ZIP Code *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-hashtag"></i>
+
+                            <input
+                                type="text"
+                                id="customerPin"
+                                placeholder="PIN / ZIP code"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        required
+                    >
+
+                    <span>
+                        I agree to the Terms & Conditions
+                        and Privacy Policy.
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
+                    Create Customer Account
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SELLER SIGN UP
+        ================================================== -->
+
+        <div class="auth-page signup-page hidden"
+             id="sellerSignupPage">
+
+            <div class="signup-heading">
+
+                <button
+                    class="back-button"
+                    onclick="showAccountSelection()">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </button>
+
+                <div>
+
+                    <h2>
+                        Create Seller Account
+                    </h2>
+
+                    <p>
+                        Bring your local store online.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form onsubmit="createSellerAccount(event)">
+
+
+                <!-- ================= PERSONAL INFORMATION ================= -->
+
+                <div class="form-section-title">
+
+                    <i class="fa-regular fa-user"></i>
+
+                    Personal Information
+
+                </div>
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        Full Name *
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="sellerName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL + MOBILE -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="sellerEmail"
+                                placeholder="Email address"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Mobile Number *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="sellerMobile"
+                                placeholder="Mobile number"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Create New Password *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="sellerPassword"
+                                placeholder="Create password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('sellerPassword', this)">
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Re-enter Password *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="sellerConfirmPassword"
+                                placeholder="Confirm password"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= BUSINESS INFORMATION ================= -->
+
+                <div class="form-section-title business-title">
+
+                    <i class="fa-solid fa-store"></i>
+
+                    Business Information
+
+                </div>
+
+
+
+                <!-- BUSINESS NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        Business Name *
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-store"></i>
+
+                        <input
+                            type="text"
+                            id="businessName"
+                            placeholder="Enter your shop/business name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BUSINESS PHONE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Business Phone Number *
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input
+                            type="tel"
+                            id="businessPhone"
+                            placeholder="Business contact number"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BUSINESS ADDRESS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Business Address *
+                    </label>
+
+                    <div class="input-box textarea-box">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <textarea
+                            id="businessAddress"
+                            placeholder="Shop address"
+                            required></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STATE + CITY -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Select State *
+                        </label>
+
+                        <select
+                            id="sellerState"
+                            required>
+
+                            <option value="">
+                                Select State
+                            </option>
+
+                            <option>
+                                Bihar
+                            </option>
+
+                            <option>
+                                Jharkhand
+                            </option>
+
+                            <option>
+                                West Bengal
+                            </option>
+
+                            <option>
+                                Uttar Pradesh
+                            </option>
+
+                            <option>
+                                Delhi
+                            </option>
+
+                            <option>
+                                Maharashtra
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            City *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-city"></i>
+
+                            <input
+                                type="text"
+                                id="sellerCity"
+                                placeholder="City"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AREA + PIN -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Area Name *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-map-pin"></i>
+
+                            <input
+                                type="text"
+                                id="sellerArea"
+                                placeholder="Area / Locality"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            PIN Code / ZIP Code *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-hashtag"></i>
+
+                            <input
+                                type="text"
+                                id="sellerPin"
+                                placeholder="PIN / ZIP code"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SHOP PHOTO -->
+
+                <div class="form-group">
+
+                    <label>
+                        Shop Photo
+                    </label>
+
+                    <label class="photo-upload">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <span>
+                            Upload Shop Photo
+                        </span>
+
+                        <small>
+                            JPG, PNG up to 5MB
+                        </small>
+
+                        <input
+                            type="file"
+                            id="shopPhoto"
+                            accept="image/png,image/jpeg"
+                            onchange="showFileName(this)"
+                        >
+
+                    </label>
+
+                    <div
+                        id="fileName"
+                        class="file-name">
+                    </div>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        required
+                    >
+
+                    <span>
+                        I agree to the Terms & Conditions
+                        and Privacy Policy.
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
+                    Create Seller Account
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FORGOT PASSWORD
+        ================================================== -->
+
+        <div class="auth-page hidden"
+             id="forgotPasswordPage">
+
+            <div class="auth-header">
+
+                <div class="auth-logo">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+
+                <h2>
+                    Forgot Password?
+                </h2>
+
+                <p>
+                    Enter your email and we'll help you
+                    reset your password.
+                </p>
+
+            </div>
+
+
+            <form onsubmit="resetPassword(event)">
+
+                <div class="form-group">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="forgotEmail"
+                            placeholder="Enter your registered email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
+                    Send Reset Link
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </form>
+
+
+            <div class="back-login">
+
+                Remember your password?
+
+                <button onclick="showLogin()">
+                    Login
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="auth.js"></script>
+
+<script src="stores.js"></script>
+
+</body>
+</html>
