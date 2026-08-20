@@ -1,0 +1,231 @@
+{% include'header.html'%}
+
+
+
+    <!-- =====================================================
+         CART PAGE
+    ====================================================== -->
+
+    <main class="cart-page">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="cart-header">
+
+            <h1>
+                My Cart
+            </h1>
+
+            <p>
+                Review your products before placing your order.
+            </p>
+
+        </div>
+
+
+
+        <!-- CART CONTAINER -->
+
+        <div class="cart-container">
+
+
+            <!-- =================================================
+                 CART ITEMS SECTION
+            ================================================== -->
+
+            <section class="cart-items-section">
+
+
+                <!-- TITLE ROW -->
+
+                <div class="cart-title-row">
+
+                    <h2>
+                        Shopping Cart
+                    </h2>
+
+
+                    <button
+                        type="button"
+                        class="clear-btn"
+                        onclick="clearCart()"
+                    >
+                        Clear Cart
+                    </button>
+
+                </div>
+
+
+                <!-- CART ITEMS -->
+
+                <div id="cartItems">
+
+                    <!-- Products will be loaded by cart.js -->
+
+                </div>
+
+
+                <!-- EMPTY CART -->
+
+                <div
+                    id="emptyCart"
+                    class="empty-cart"
+                    style="display: none;"
+                >
+
+                    <div class="empty-icon">
+                        🛒
+                    </div>
+
+
+                    <h2>
+                        Your cart is empty
+                    </h2>
+
+
+                    <p>
+                        Add some products from your nearby stores.
+                    </p>
+
+
+                    <a
+                        href="{{ url_for('cart') }}"
+                        class="shop-btn"
+                    >
+                        Browse Stores
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ORDER SUMMARY
+            ================================================== -->
+
+            <aside class="cart-summary">
+
+
+                <h2>
+                    Order Summary
+                </h2>
+
+
+                <!-- ITEMS -->
+
+                <div class="summary-row">
+
+                    <span>
+                        Items
+                    </span>
+
+                    <span id="summaryItems">
+                        0
+                    </span>
+
+                </div>
+
+
+                <!-- SUBTOTAL -->
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <span id="subtotal">
+                        ₹0
+                    </span>
+
+                </div>
+
+
+                <!-- DELIVERY -->
+
+                <div class="summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <span id="delivery">
+                        ₹0
+                    </span>
+
+                </div>
+
+
+                <hr>
+
+
+                <!-- TOTAL -->
+
+                <div class="total-row">
+
+                    <strong>
+                        Total
+                    </strong>
+
+                    <strong id="total">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <!-- CHECKOUT -->
+
+                <button
+                    type="button"
+                    class="checkout-btn"
+                    onclick="checkout()"
+                >
+                    Proceed to Checkout
+                </button>
+
+
+                <!-- CONTINUE SHOPPING -->
+
+                <a
+                    href="{{ url_for('stores') }}">
+                    class="continue-btn"
+                >
+                    Continue Shopping
+                </a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 NearBy Dukan.
+            Support Local, Shop Local.
+        </p>
+
+    </footer>
+
+
+
+    <!-- CART JAVASCRIPT -->
+
+    <script src="{{url_for('static',filename='js/cart.js')}}"></script>
+
+
+
+</body>
+
+</html>
