@@ -1,0 +1,1288 @@
+/* ========================================
+   ABOUT HERO
+======================================== */
+
+.about-hero {
+
+    min-height: 390px;
+
+    padding: 45px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            110deg,
+            #effaf1,
+            #f9fcf9
+        );
+
+}
+
+
+.about-hero-content {
+
+    max-width: 600px;
+
+}
+
+
+.breadcrumb {
+
+    display: flex;
+
+    gap: 8px;
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin-bottom: 22px;
+
+}
+
+
+.breadcrumb a {
+
+    color: #16a34a;
+
+    text-decoration: none;
+
+}
+
+
+.about-label {
+
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    background: #dff4e3;
+
+    color: #15803d;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+.about-hero h1 {
+
+    margin-top: 16px;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+}
+
+
+.about-hero h1 span {
+
+    color: #16a34a;
+
+}
+
+
+.about-hero p {
+
+    max-width: 550px;
+
+    margin-top: 13px;
+
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+}
+
+
+.hero-buttons button {
+
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 7px;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.hero-buttons button i {
+
+    margin-left: 7px;
+
+}
+
+
+.hero-buttons a {
+
+    color: #16a34a;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+
+/* ========================================
+   HERO VISUAL
+======================================== */
+
+.about-hero-visual {
+
+    width: 400px;
+
+    height: 280px;
+
+    position: relative;
+
+}
+
+
+.shop-building {
+
+    position: absolute;
+
+    left: 90px;
+
+    top: 45px;
+
+    width: 190px;
+
+    height: 170px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    font-size: 95px;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.08);
+
+}
+
+
+.customer-icon {
+
+    position: absolute;
+
+    left: 20px;
+
+    bottom: 30px;
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e2f5e6;
+
+    border-radius: 50%;
+
+    font-size: 35px;
+
+}
+
+
+.connection-line {
+
+    position: absolute;
+
+    left: 65px;
+
+    top: 130px;
+
+    color: #16a34a;
+
+    font-size: 35px;
+
+    font-weight: 700;
+
+}
+
+
+.online-card {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 15px;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.1);
+
+}
+
+
+.online-card i {
+
+    color: #16a34a;
+
+    font-size: 20px;
+
+}
+
+
+.online-card span {
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.online-card small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #16a34a;
+
+    font-size: 8px;
+
+}
+
+
+
+/* ========================================
+   COMMON SECTION
+======================================== */
+
+.problem-section,
+.works-section,
+.values-section {
+
+    padding: 65px 7%;
+
+}
+
+
+.section-heading {
+
+    margin-bottom: 35px;
+
+}
+
+
+.section-heading.center {
+
+    max-width: 650px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    text-align: center;
+
+}
+
+
+.section-heading > span {
+
+    color: #16a34a;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.section-heading h2 {
+
+    margin-top: 9px;
+
+    font-size: 27px;
+
+}
+
+
+.section-heading h2 strong {
+
+    color: #16a34a;
+
+}
+
+
+.section-heading p {
+
+    margin-top: 10px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* ========================================
+   PROBLEM CARDS
+======================================== */
+
+.problem-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.problem-card {
+
+    padding: 25px 20px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 11px;
+
+    background: white;
+
+    transition: .25s;
+
+}
+
+
+.problem-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #b7e2c0;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.07);
+
+}
+
+
+.problem-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eff9f1;
+
+    border-radius: 12px;
+
+    font-size: 28px;
+
+}
+
+
+.problem-card h3 {
+
+    margin-top: 18px;
+
+    font-size: 14px;
+
+}
+
+
+.problem-card p {
+
+    margin-top: 8px;
+
+    color: #888;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* ========================================
+   SOLUTION
+======================================== */
+
+.solution-section {
+
+    padding: 65px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 80px;
+
+    background: #f6faf7;
+
+}
+
+
+.solution-visual {
+
+    width: 400px;
+
+    height: 300px;
+
+    position: relative;
+
+    flex-shrink: 0;
+
+}
+
+
+.solution-circle {
+
+    position: absolute;
+
+    left: 90px;
+
+    top: 55px;
+
+    width: 190px;
+
+    height: 190px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 50%;
+
+    color: #16a34a;
+
+    font-size: 80px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.08);
+
+}
+
+
+.solution-mini {
+
+    position: absolute;
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+.mini-one {
+
+    top: 25px;
+
+    left: 50px;
+
+}
+
+
+.mini-two {
+
+    right: 35px;
+
+    top: 100px;
+
+}
+
+
+.mini-three {
+
+    left: 50px;
+
+    bottom: 25px;
+
+}
+
+
+.solution-content {
+
+    max-width: 600px;
+
+}
+
+
+.section-label {
+
+    color: #16a34a;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.solution-content h2 {
+
+    margin-top: 10px;
+
+    font-size: 30px;
+
+}
+
+
+.solution-content h2 span {
+
+    color: #16a34a;
+
+}
+
+
+.solution-content p {
+
+    margin-top: 13px;
+
+    color: #667085;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+}
+
+
+.solution-points {
+
+    margin-top: 22px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+}
+
+
+.solution-points div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.solution-points i {
+
+    width: 22px;
+
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dff4e3;
+
+    color: #16a34a;
+
+    font-size: 9px;
+
+}
+
+
+
+/* ========================================
+   HOW IT WORKS
+======================================== */
+
+.works-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+}
+
+
+.works-box {
+
+    padding: 28px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    background: white;
+
+}
+
+
+.store-box {
+
+    background: #f5fbf6;
+
+    border-color: #dcefe0;
+
+}
+
+
+.works-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+
+.works-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eaf7ec;
+
+    border-radius: 11px;
+
+    font-size: 25px;
+
+}
+
+
+.works-title h3 {
+
+    font-size: 14px;
+
+}
+
+
+.works-title p {
+
+    margin-top: 4px;
+
+    color: #888;
+
+    font-size: 9px;
+
+}
+
+
+.work-step {
+
+    display: flex;
+
+    gap: 14px;
+
+    padding-top: 22px;
+
+}
+
+
+.work-step > span {
+
+    color: #16a34a;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+}
+
+
+.work-step strong {
+
+    display: block;
+
+    font-size: 11px;
+
+}
+
+
+.work-step small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #888;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+
+}
+
+
+
+/* ========================================
+   VALUES
+======================================== */
+
+.values-section {
+
+    background: #f7faf8;
+
+}
+
+
+.values-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.value-card {
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 11px;
+
+    border: 1px solid #e5e7eb;
+
+}
+
+
+.value-card > div {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eff9f1;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+}
+
+
+.value-card h3 {
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+}
+
+
+.value-card p {
+
+    margin-top: 7px;
+
+    color: #888;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* ========================================
+   IMPACT
+======================================== */
+
+.impact-section {
+
+    padding: 55px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background: #111827;
+
+    color: white;
+
+}
+
+
+.impact-content {
+
+    max-width: 600px;
+
+}
+
+
+.impact-content > span {
+
+    color: #4ade80;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.impact-content h2 {
+
+    margin-top: 10px;
+
+    font-size: 30px;
+
+}
+
+
+.impact-content h2 strong {
+
+    color: #4ade80;
+
+}
+
+
+.impact-content p {
+
+    margin-top: 12px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+.impact-content button {
+
+    margin-top: 20px;
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.impact-content button i {
+
+    margin-left: 7px;
+
+}
+
+
+.impact-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+    min-width: 350px;
+
+}
+
+
+.impact-stats div {
+
+    padding: 20px;
+
+    border: 1px solid #374151;
+
+    border-radius: 9px;
+
+    background: #1f2937;
+
+}
+
+
+.impact-stats strong {
+
+    display: block;
+
+    color: #4ade80;
+
+    font-size: 24px;
+
+}
+
+
+.impact-stats span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #9ca3af;
+
+    font-size: 9px;
+
+}
+
+
+
+/* ========================================
+   CTA
+======================================== */
+
+.about-cta {
+
+    margin: 50px 7%;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #eaf8ec,
+            #f7fcf8
+        );
+
+}
+
+
+.about-cta span {
+
+    color: #16a34a;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+.about-cta h2 {
+
+    margin-top: 10px;
+
+    font-size: 28px;
+
+}
+
+
+.about-cta p {
+
+    margin-top: 8px;
+
+    color: #777;
+
+    font-size: 11px;
+
+}
+
+
+.about-cta button {
+
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.about-cta button i {
+
+    margin-left: 7px;
+
+}
+
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .about-hero {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .about-hero-visual {
+
+        margin: 30px auto 0;
+
+    }
+
+
+    .problem-grid,
+    .values-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .solution-section {
+
+        gap: 30px;
+
+    }
+
+
+    .impact-section {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .about-hero h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .about-hero-visual {
+
+        transform: scale(.8);
+
+        margin-left: -30px;
+
+    }
+
+
+    .problem-grid,
+    .values-grid,
+    .works-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .solution-section {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .solution-visual {
+
+        transform: scale(.8);
+
+        margin-left: -40px;
+
+    }
+
+
+    .solution-points {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .impact-stats {
+
+        min-width: 100%;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .about-cta {
+
+        margin-left: 5%;
+
+        margin-right: 5%;
+
+        padding: 40px 20px;
+
+    }
+
+}
