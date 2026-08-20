@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NearBy Dukan - Local Stores Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/offers.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stores.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/categories.css') }}">
+    
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="logo-section">
+        <div class="logo-icon">
+            <i class="fa-solid fa-shop"></i>
+        </div>
+        <div>
+            <div class="logo">
+                NearBy <span>Dukan</span>
+            </div>
+            <div class="tagline">
+                Apki Dukan, Ab Online
+            </div>
+        </div>
+    </div>
+    <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Patna, Bihar</span>
+    </div>
+    <nav class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('stores') }}">stores</a>
+        <a href="{{ url_for('categories') }}">categories</a>
+        <a href="{{ url_for('offers') }}">offers</a>
+
+
+        <a href="{{ url_for('about') }}">About Us</a>
+    </nav>
+    <div class="nav-actions">
+        <div class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">3</span>
+        </div>
+       <div id="accountArea">
+            <button class="login-btn" onclick="openLoginModal()">
+                Login / Sign Up
+            </button>
+        </div>
+    </div>
+</header>
+</body>
+</html>
