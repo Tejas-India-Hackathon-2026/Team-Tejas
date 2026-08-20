@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Offers | NearBy Dukan</title>
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="offers.css">
+    <link rel="stylesheet" href="auth.css">
+    
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo-section">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-shop"></i>
+        </div>
+
+        <div>
+
+            <div class="logo">
+                NearBy <span>Dukan</span>
+            </div>
+
+            <div class="tagline">
+                Apki Dukan, Ab Online
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="location">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        <span>
+            Patna, Bihar
+        </span>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="home.html">
+            Home
+        </a>
+
+        <a href="stores.html">
+            Stores
+        </a>
+
+        <a href="categories.html">
+            Categories
+        </a>
+
+        <a href="offers.html"
+           class="active">
+            Offers
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <a href="cart.html" class="cart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cartCount">0</span>
+        </a>
+
+        <button class="login-btn" onclick="openLoginModal()">
+            Login / Sign Up
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= OFFER HERO ================= -->
+
+<section class="offer-hero">
+
+    <div class="offer-hero-content">
+
+        <div class="breadcrumb">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <span>/</span>
+
+            <strong>
+                Offers
+            </strong>
+
+        </div>
+
+
+        <span class="offer-label">
+            🔥 TODAY'S BEST DEALS
+        </span>
+
+
+        <h1>
+            Great Deals From
+            <span>Local Stores</span>
+        </h1>
+
+
+        <p>
+            Apne aas-paas ki dukano se shopping karein
+            aur amazing offers ka fayda uthayein.
+        </p>
+
+
+        <button class="shop-offer-btn"
+                onclick="scrollToOffers()">
+
+            Explore Offers
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+
+    <div class="offer-hero-visual">
+
+        <div class="discount-circle">
+
+            <strong>
+                UP TO
+            </strong>
+
+            <span>
+                50%
+            </span>
+
+            <small>
+                OFF
+            </small>
+
+        </div>
+
+
+        <div class="hero-shopping">
+            🛒
+        </div>
+
+
+        <div class="floating-offer offer-float-one">
+            🏷️ 20% OFF
+        </div>
+
+
+        <div class="floating-offer offer-float-two">
+            🚚 FREE DELIVERY
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= OFFER TABS ================= -->
+
+<section class="offer-section">
+
+    <div class="offer-tabs">
+
+        <button class="offer-tab active"
+                onclick="filterOffers('all', this)">
+            All Offers
+        </button>
+
+        <button class="offer-tab"
+                onclick="filterOffers('grocery', this)">
+            Grocery
+        </button>
+
+        <button class="offer-tab"
+                onclick="filterOffers('food', this)">
+            Food & Bakery
+        </button>
+
+        <button class="offer-tab"
+                onclick="filterOffers('daily', this)">
+            Daily Essentials
+        </button>
+
+        <button class="offer-tab"
+                onclick="filterOffers('delivery', this)">
+            Free Delivery
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FEATURED OFFERS ================= -->
+
+<section class="offer-section"
+         id="offers">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Featured Offers
+            </h2>
+
+            <p>
+                Handpicked deals from stores near you
+            </p>
+
+        </div>
+
+        <span>
+            🔥 Limited Time
+        </span>
+
+    </div>
+
+
+    <div class="offer-grid"
+         id="offerGrid">
+
+
+        <!-- OFFER 1 -->
+
+        <div class="offer-card"
+             data-type="grocery">
+
+            <div class="offer-image offer-image-one">
+
+                <span class="discount-tag">
+                    25% OFF
+                </span>
+
+                <button class="offer-heart">
+                    ♡
+                </button>
+
+                <div class="offer-emoji">
+                    🛒
+                </div>
+
+            </div>
+
+
+            <div class="offer-details">
+
+                <div class="offer-store">
+                    Sharma Kirana Store
+                </div>
+
+                <h3>
+                    Get 25% OFF on Grocery
+                </h3>
+
+                <p>
+                    Minimum order ₹499
+                </p>
+
+
+                <div class="offer-footer">
+
+                    <div class="price">
+
+                        <strong>
+                            ₹374
+                        </strong>
+
+                        <del>
+                            ₹499
+                        </del>
+
+                    </div>
+
+                    <button onclick="claimOffer('Grocery25')">
+                        Get Offer
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OFFER 2 -->
+
+        <div class="offer-card"
+             data-type="food">
+
+            <div class="offer-image offer-image-two">
+
+                <span class="discount-tag">
+                    20% OFF
+                </span>
+
+                <button class="offer-heart">
+                    ♡
+                </button>
+
+                <div class="offer-emoji">
+                    🥐
+                </div>
+
+            </div>
+
+
+            <div class="offer-details">
+
+                <div class="offer-store">
+                    Maa Laxmi Bakery
+                </div>
+
+                <h3>
+                    20% OFF on Bakery Items
+                </h3>
+
+                <p>
+                    Cakes, Bread & Pastries
+                </p>
+
+
+                <div class="offer-footer">
+
+                    <div class="price">
+
+                        <strong>
+                            ₹240
+                        </strong>
+
+                        <del>
+                            ₹300
+                        </del>
+
+                    </div>
+
+                    <button onclick="claimOffer('Bakery20')">
+                        Get Offer
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OFFER 3 -->
+
+        <div class="offer-card"
+             data-type="daily">
+
+            <div class="offer-image offer-image-three">
+
+                <span class="discount-tag">
+                    ₹100 OFF
+                </span>
+
+                <button class="offer-heart">
+                    ♡
+                </button>
+
+                <div class="offer-emoji">
+                    🥛
+                </div>
+
+            </div>
+
+
+            <div class="offer-details">
+
+                <div class="offer-store">
+                    Kumar Dairy & Sweets
+                </div>
+
+                <h3>
+                    Flat ₹100 OFF
+                </h3>
+
+                <p>
+                    On orders above ₹599
+                </p>
+
+
+                <div class="offer-footer">
+
+                    <div class="price">
+
+                        <strong>
+                            ₹499
+                        </strong>
+
+                        <del>
+                            ₹599
+                        </del>
+
+                    </div>
+
+                    <button onclick="claimOffer('Dairy100')">
+                        Get Offer
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OFFER 4 -->
+
+        <div class="offer-card"
+             data-type="delivery">
+
+            <div class="offer-image offer-image-four">
+
+                <span class="discount-tag">
+                    FREE
+                </span>
+
+                <button class="offer-heart">
+                    ♡
+                </button>
+
+                <div class="offer-emoji">
+                    🚚
+                </div>
+
+            </div>
+
+
+            <div class="offer-details">
+
+                <div class="offer-store">
+                    Verma General Store
+                </div>
+
+                <h3>
+                    Free Delivery
+                </h3>
+
+                <p>
+                    On orders above ₹299
+                </p>
+
+
+                <div class="offer-footer">
+
+                    <div class="price">
+
+                        <strong>
+                            ₹0
+                        </strong>
+
+                        <del>
+                            ₹40
+                        </del>
+
+                    </div>
+
+                    <button onclick="claimOffer('FREEDELIVERY')">
+                        Get Offer
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OFFER 5 -->
+
+        <div class="offer-card"
+             data-type="grocery">
+
+            <div class="offer-image offer-image-five">
+
+                <span class="discount-tag">
+                    30% OFF
+                </span>
+
+                <button class="offer-heart">
+                    ♡
+                </button>
+
+                <div class="offer-emoji">
+                    🍚
+                </div>
+
+            </div>
+
+
+            <div class="offer-details">
+
+                <div class="offer-store">
+                    Gupta Provision Store
+                </div>
+
+                <h3>
+                    30% OFF on Rice & Dal
+                </h3>
+
+                <p>
+                    Selected products only
+                </p>
+
+
+                <div class="offer-footer">
+
+                    <div class="price">
+
+                        <strong>
+                            ₹350
+                        </strong>
+
+                        <del>
+                            ₹500
+                        </del>
+
+                    </div>
+
+                    <button onclick="claimOffer('RICE30')">
+                        Get Offer
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OFFER 6 -->
+
+        <div class="offer-card"
+             data-type="daily">
+
+            <div class="offer-image offer-image-six">
+
+                <span class="discount-tag">
+                    15% OFF
+                </span>
+
+                <button class="offer-heart">
+                    ♡
+                </button>
+
+                <div class="offer-emoji">
+                    🧴
+                </div>
+
+            </div>
+
+
+            <div class="offer-details">
+
+                <div class="offer-store">
+                    Patel Departmental Store
+                </div>
+
+                <h3>
+                    15% OFF Personal Care
+                </h3>
+
+                <p>
+                    Shampoo, Soap & Skincare
+                </p>
+
+
+                <div class="offer-footer">
+
+                    <div class="price">
+
+                        <strong>
+                            ₹425
+                        </strong>
+
+                        <del>
+                            ₹500
+                        </del>
+
+                    </div>
+
+                    <button onclick="claimOffer('CARE15')">
+                        Get Offer
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= COUPON SECTION ================= -->
+
+<section class="coupon-section">
+
+    <div class="coupon-content">
+
+        <span>
+            🎁 EXTRA SAVINGS
+        </span>
+
+        <h2>
+            Use Coupons & Save More
+        </h2>
+
+        <p>
+            Apply these coupons while ordering
+            from participating local stores.
+        </p>
+
+    </div>
+
+
+    <div class="coupon-list">
+
+
+        <div class="coupon-card">
+
+            <div class="coupon-left">
+
+                <strong>
+                    SAVE50
+                </strong>
+
+                <small>
+                    Get ₹50 OFF
+                </small>
+
+            </div>
+
+            <div class="coupon-right">
+
+                <span>
+                    ₹299+ order
+                </span>
+
+                <button onclick="copyCoupon('SAVE50')">
+                    Copy
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="coupon-card">
+
+            <div class="coupon-left">
+
+                <strong>
+                    LOCAL20
+                </strong>
+
+                <small>
+                    20% OFF
+                </small>
+
+            </div>
+
+            <div class="coupon-right">
+
+                <span>
+                    ₹499+ order
+                </span>
+
+                <button onclick="copyCoupon('LOCAL20')">
+                    Copy
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="coupon-card">
+
+            <div class="coupon-left">
+
+                <strong>
+                    FIRST100
+                </strong>
+
+                <small>
+                    ₹100 OFF
+                </small>
+
+            </div>
+
+            <div class="coupon-right">
+
+                <span>
+                    New users
+                </span>
+
+                <button onclick="copyCoupon('FIRST100')">
+                    Copy
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HOW OFFERS WORK ================= -->
+
+<section class="how-section">
+
+    <div class="section-heading center">
+
+        <h2>
+            How Offers Work
+        </h2>
+
+        <p>
+            Save money in just three simple steps
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <div class="step-icon">
+                🔍
+            </div>
+
+            <h3>
+                Find an Offer
+            </h3>
+
+            <p>
+                Browse offers from stores
+                near your location.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <div class="step-icon">
+                🏷️
+            </div>
+
+            <h3>
+                Claim the Offer
+            </h3>
+
+            <p>
+                Copy the coupon or
+                select the offer.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <div class="step-icon">
+                🛍️
+            </div>
+
+            <h3>
+                Shop & Save
+            </h3>
+
+            <p>
+                Place your order and
+                enjoy your savings.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <i class="fa-solid fa-shop"></i>
+
+        NearBy <span>Dukan</span>
+
+    </div>
+
+    <p>
+        Apne local stores ko digital banayein.
+        Shop nearby. Support local.
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="stores.html">
+            Stores
+        </a>
+
+        <a href="categories.html">
+            Categories
+        </a>
+
+        <a href="offers.html">
+            Offers
+        </a>
+
+        <a href="#">
+            Contact
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 NearBy Dukan. All Rights Reserved.
+    </p>
+
+</footer>
+<!-- =====================================================
+     AUTHENTICATION MODAL
+===================================================== -->
+
+<div class="auth-overlay" id="authOverlay">
+
+    <div class="auth-modal">
+
+        <!-- CLOSE BUTTON -->
+
+        <button class="auth-close"
+                onclick="closeAuthModal()">
+            &times;
+        </button>
+
+
+        <!-- =================================================
+             LOGIN SECTION
+        ================================================== -->
+
+        <div class="auth-page" id="loginPage">
+
+            <div class="auth-header">
+
+                <div class="auth-logo">
+                    <i class="fa-solid fa-shop"></i>
+                </div>
+
+                <h2>
+                    Welcome Back!
+                </h2>
+
+                <p>
+                    Login to your NearBy Dukan account
+                </p>
+
+            </div>
+
+
+            <form onsubmit="loginUser(event)">
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label>
+                            Password
+                        </label>
+
+                        <button
+                            type="button"
+                            class="forgot-btn"
+                            onclick="showForgotPassword()">
+
+                            Forgot Password?
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword('loginPassword', this)">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT TYPE -->
+
+                <div class="account-type-login">
+
+                    <label>
+                        Login as
+                    </label>
+
+                    <div class="login-type-options">
+
+                        <label class="radio-card">
+
+                            <input
+                                type="radio"
+                                name="loginType"
+                                value="customer"
+                                checked
+                            >
+
+                            <span>
+                                🛒 Customer
+                            </span>
+
+                        </label>
+
+
+                        <label class="radio-card">
+
+                            <input
+                                type="radio"
+                                name="loginType"
+                                value="seller"
+                            >
+
+                            <span>
+                                🏪 Seller
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
+                    Login
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <div class="auth-divider">
+
+                <span>
+                    OR
+                </span>
+
+            </div>
+
+
+            <div class="signup-question">
+
+                Don't have an account?
+
+                <button
+                    type="button"
+                    onclick="showAccountSelection()">
+
+                    Sign Up
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ACCOUNT TYPE SELECTION
+        ================================================== -->
+
+        <div class="auth-page hidden"
+             id="accountSelectionPage">
+
+            <div class="auth-header">
+
+                <div class="auth-logo">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <h2>
+                    Create Your Account
+                </h2>
+
+                <p>
+                    Choose the type of account you want
+                    to create.
+                </p>
+
+            </div>
+
+
+            <div class="account-selection">
+
+
+                <!-- CUSTOMER -->
+
+                <button
+                    class="account-choice customer-choice"
+                    onclick="showCustomerSignup()">
+
+                    <div class="choice-icon">
+                        🛒
+                    </div>
+
+                    <div class="choice-content">
+
+                        <h3>
+                            Create Customer Account
+                        </h3>
+
+                        <p>
+                            Find nearby stores, browse products
+                            and place orders.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+
+                <!-- SELLER -->
+
+                <button
+                    class="account-choice seller-choice"
+                    onclick="showSellerSignup()">
+
+                    <div class="choice-icon">
+                        🏪
+                    </div>
+
+                    <div class="choice-content">
+
+                        <h3>
+                            Create Seller Account
+                        </h3>
+
+                        <p>
+                            Take your local store online and
+                            reach nearby customers.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="back-login">
+
+                Already have an account?
+
+                <button
+                    onclick="showLogin()">
+
+                    Login
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CUSTOMER SIGN UP
+        ================================================== -->
+
+        <div class="auth-page signup-page hidden"
+             id="customerSignupPage">
+
+            <div class="signup-heading">
+
+                <button
+                    class="back-button"
+                    onclick="showAccountSelection()">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </button>
+
+                <div>
+
+                    <h2>
+                        Create Customer Account
+                    </h2>
+
+                    <p>
+                        Join NearBy Dukan and shop locally.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form onsubmit="createCustomerAccount(event)">
+
+
+                <!-- FULL NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        Full Name *
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL + MOBILE -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="customerEmail"
+                                placeholder="Email address"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Mobile Number *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="customerMobile"
+                                placeholder="Mobile number"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Create New Password *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="customerPassword"
+                                placeholder="Create password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('customerPassword', this)">
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Re-enter Password *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="customerConfirmPassword"
+                                placeholder="Confirm password"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ADDRESS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Address *
+                    </label>
+
+                    <div class="input-box textarea-box">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <textarea
+                            id="customerAddress"
+                            placeholder="House / Street / Landmark"
+                            required></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AREA + CITY -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Area *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-map-pin"></i>
+
+                            <input
+                                type="text"
+                                id="customerArea"
+                                placeholder="Area / Locality"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            City *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-city"></i>
+
+                            <input
+                                type="text"
+                                id="customerCity"
+                                placeholder="City"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STATE + PIN -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            State *
+                        </label>
+
+                        <select
+                            id="customerState"
+                            required>
+
+                            <option value="">
+                                Select State
+                            </option>
+
+                            <option>
+                                Bihar
+                            </option>
+
+                            <option>
+                                Jharkhand
+                            </option>
+
+                            <option>
+                                West Bengal
+                            </option>
+
+                            <option>
+                                Uttar Pradesh
+                            </option>
+
+                            <option>
+                                Delhi
+                            </option>
+
+                            <option>
+                                Maharashtra
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            PIN Code / ZIP Code *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-hashtag"></i>
+
+                            <input
+                                type="text"
+                                id="customerPin"
+                                placeholder="PIN / ZIP code"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        required
+                    >
+
+                    <span>
+                        I agree to the Terms & Conditions
+                        and Privacy Policy.
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
+                    Create Customer Account
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SELLER SIGN UP
+        ================================================== -->
+
+        <div class="auth-page signup-page hidden"
+             id="sellerSignupPage">
+
+            <div class="signup-heading">
+
+                <button
+                    class="back-button"
+                    onclick="showAccountSelection()">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </button>
+
+                <div>
+
+                    <h2>
+                        Create Seller Account
+                    </h2>
+
+                    <p>
+                        Bring your local store online.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form onsubmit="createSellerAccount(event)">
+
+
+                <!-- ================= PERSONAL INFORMATION ================= -->
+
+                <div class="form-section-title">
+
+                    <i class="fa-regular fa-user"></i>
+
+                    Personal Information
+
+                </div>
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        Full Name *
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="sellerName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL + MOBILE -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="sellerEmail"
+                                placeholder="Email address"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Mobile Number *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="sellerMobile"
+                                placeholder="Mobile number"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Create New Password *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="sellerPassword"
+                                placeholder="Create password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('sellerPassword', this)">
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Re-enter Password *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="sellerConfirmPassword"
+                                placeholder="Confirm password"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= BUSINESS INFORMATION ================= -->
+
+                <div class="form-section-title business-title">
+
+                    <i class="fa-solid fa-store"></i>
+
+                    Business Information
+
+                </div>
+
+
+
+                <!-- BUSINESS NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        Business Name *
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-store"></i>
+
+                        <input
+                            type="text"
+                            id="businessName"
+                            placeholder="Enter your shop/business name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BUSINESS PHONE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Business Phone Number *
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input
+                            type="tel"
+                            id="businessPhone"
+                            placeholder="Business contact number"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BUSINESS ADDRESS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Business Address *
+                    </label>
+
+                    <div class="input-box textarea-box">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <textarea
+                            id="businessAddress"
+                            placeholder="Shop address"
+                            required></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STATE + CITY -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Select State *
+                        </label>
+
+                        <select
+                            id="sellerState"
+                            required>
+
+                            <option value="">
+                                Select State
+                            </option>
+
+                            <option>
+                                Bihar
+                            </option>
+
+                            <option>
+                                Jharkhand
+                            </option>
+
+                            <option>
+                                West Bengal
+                            </option>
+
+                            <option>
+                                Uttar Pradesh
+                            </option>
+
+                            <option>
+                                Delhi
+                            </option>
+
+                            <option>
+                                Maharashtra
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            City *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-city"></i>
+
+                            <input
+                                type="text"
+                                id="sellerCity"
+                                placeholder="City"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AREA + PIN -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Area Name *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-map-pin"></i>
+
+                            <input
+                                type="text"
+                                id="sellerArea"
+                                placeholder="Area / Locality"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            PIN Code / ZIP Code *
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-hashtag"></i>
+
+                            <input
+                                type="text"
+                                id="sellerPin"
+                                placeholder="PIN / ZIP code"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SHOP PHOTO -->
+
+                <div class="form-group">
+
+                    <label>
+                        Shop Photo
+                    </label>
+
+                    <label class="photo-upload">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <span>
+                            Upload Shop Photo
+                        </span>
+
+                        <small>
+                            JPG, PNG up to 5MB
+                        </small>
+
+                        <input
+                            type="file"
+                            id="shopPhoto"
+                            accept="image/png,image/jpeg"
+                            onchange="showFileName(this)"
+                        >
+
+                    </label>
+
+                    <div
+                        id="fileName"
+                        class="file-name">
+                    </div>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        required
+                    >
+
+                    <span>
+                        I agree to the Terms & Conditions
+                        and Privacy Policy.
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
+                    Create Seller Account
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FORGOT PASSWORD
+        ================================================== -->
+
+        <div class="auth-page hidden"
+             id="forgotPasswordPage">
+
+            <div class="auth-header">
+
+                <div class="auth-logo">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+
+                <h2>
+                    Forgot Password?
+                </h2>
+
+                <p>
+                    Enter your email and we'll help you
+                    reset your password.
+                </p>
+
+            </div>
+
+
+            <form onsubmit="resetPassword(event)">
+
+                <div class="form-group">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="forgotEmail"
+                            placeholder="Enter your registered email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
+                    Send Reset Link
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </form>
+
+
+            <div class="back-login">
+
+                Remember your password?
+
+                <button onclick="showLogin()">
+                    Login
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="auth.js"></script>
+
+<script src="offers.js"></script>
+
+</body>
+
+</html>
