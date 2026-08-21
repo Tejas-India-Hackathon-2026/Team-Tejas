@@ -1,144 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Stores | NearBy Dukan</title>
-
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="stores.css">
-    <link rel="stylesheet" href="auth.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-
-<body>
-
-<!-- ================= NAVBAR ================= -->
-
-<header class="navbar">
-
-    <div class="logo-section">
-
-        <div class="logo-icon">
-            <i class="fa-solid fa-shop"></i>
-        </div>
-
-        <div>
-            <div class="logo">
-                NearBy <span>Dukan</span>
-            </div>
-
-            <div class="tagline">
-                Apki Dukan, Ab Online
-            </div>
-        </div>
-
-    </div>
+{% include'header.html' %}
 
 
-    <div class="location">
-        <i class="fa-solid fa-location-dot"></i>
-        <span>Patna, Bihar</span>
-    </div>
 
+<!-- ================= CATEGORY HERO ================= -->
 
-    <nav class="nav-links">
+<section class="category-hero">
 
-        <a href="home.html">Home</a>
+    <div class="breadcrumb">
 
-        <a href="stores.html" class="active">
-            Stores
-        </a>
+        <a href="{{ url_for('home') }}">Home</a>
 
-        <a href="categories.html">
+        <span>/</span>
+
+        <strong>
             Categories
-        </a>
-
-        <a href="offers.html">
-            Offers
-        </a>
-
-        <a href="about.html">
-            About Us
-        </a>
-
-    </nav>
-
-
-    <div class="nav-actions">
-
-        <a href="cart.html" class="cart">
-
-    <i class="fa-solid fa-cart-shopping"></i>
-
-    <span class="cart-count" id="cartCount">0</span>
-
-</a>
-
-        <button class="login-btn" onclick="openLoginModal()">
-    Login / Sign Up
-</button>
+        </strong>
 
     </div>
 
-</header>
+
+    <h1>
+        Shop by <span>Categories</span>
+    </h1>
 
 
-
-<!-- ================= PAGE HERO ================= -->
-
-<section class="stores-hero">
-
-    <div>
-
-        <div class="breadcrumb">
-            <a href="home.html">Home</a>
-            <span>/</span>
-            <strong>Stores</strong>
-        </div>
+    <p>
+        Apni zarurat ke products ko category ke
+        according easily discover karein.
+    </p>
 
 
-        <h1>
-            Discover Stores <span>Near You</span>
-        </h1>
+    <!-- CATEGORY SEARCH -->
 
-        <p>
-            Apne aas-paas ki local dukano se shopping karein
-            aur apne local businesses ko support karein.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= SEARCH ================= -->
-
-<section class="store-search-section">
-
-    <div class="store-search">
+    <div class="category-search">
 
         <i class="fa-solid fa-magnifying-glass"></i>
 
         <input
             type="text"
-            id="storeSearch"
-            placeholder="Search stores, shops..."
+            id="categorySearch"
+            placeholder="Search categories..."
         >
 
-        <button onclick="searchStores()">
+        <button onclick="searchCategories()">
             Search
         </button>
 
@@ -148,654 +52,695 @@
 
 
 
-<!-- ================= MAIN CONTENT ================= -->
+<!-- ================= POPULAR CATEGORIES ================= -->
 
-<main class="stores-container">
+<section class="categories-section">
+
+    <div class="section-title">
+
+        <div>
+
+            <h2>
+                Popular Categories
+            </h2>
+
+            <p>
+                Most searched categories near you
+            </p>
+
+        </div>
+
+    </div>
 
 
-    <!-- ================= SIDEBAR ================= -->
+    <div class="popular-categories">
 
-    <aside class="filter-sidebar">
 
-        <div class="filter-header">
+        <div class="popular-card"
+             onclick="openCategory('Grocery')">
+
+            <div class="popular-icon grocery">
+                🛒
+            </div>
 
             <h3>
-                <i class="fa-solid fa-filter"></i>
-                Filters
+                Grocery
             </h3>
 
-            <button onclick="clearFilters()">
-                Clear All
-            </button>
+            <p>
+                120+ Products
+            </p>
+
+            <span>
+                Explore →
+            </span>
 
         </div>
 
 
-        <!-- DISTANCE -->
 
-        <div class="filter-group">
+        <div class="popular-card"
+             onclick="openCategory('Fruits & Vegetables')">
 
-            <h4>Distance</h4>
+            <div class="popular-icon fruits">
+                🥦
+            </div>
 
-            <label>
-                <input type="radio" name="distance">
-                Within 1 km
-            </label>
+            <h3>
+                Fruits & Vegetables
+            </h3>
 
-            <label>
-                <input type="radio" name="distance">
-                Within 3 km
-            </label>
+            <p>
+                85+ Products
+            </p>
 
-            <label>
-                <input type="radio" name="distance">
-                Within 5 km
-            </label>
-
-            <label>
-                <input type="radio" name="distance">
-                Within 10 km
-            </label>
+            <span>
+                Explore →
+            </span>
 
         </div>
 
 
-        <!-- CATEGORY -->
 
-        <div class="filter-group">
+        <div class="popular-card"
+             onclick="openCategory('Dairy & Eggs')">
 
-            <h4>Store Category</h4>
+            <div class="popular-icon dairy">
+                🥛
+            </div>
 
-            <label>
-                <input type="checkbox">
+            <h3>
+                Dairy & Eggs
+            </h3>
+
+            <p>
+                60+ Products
+            </p>
+
+            <span>
+                Explore →
+            </span>
+
+        </div>
+
+
+
+        <div class="popular-card"
+             onclick="openCategory('Snacks')">
+
+            <div class="popular-icon snacks">
+                🍪
+            </div>
+
+            <h3>
+                Snacks & Munchies
+            </h3>
+
+            <p>
+                100+ Products
+            </p>
+
+            <span>
+                Explore →
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ALL CATEGORIES ================= -->
+
+<section class="categories-section">
+
+    <div class="section-title">
+
+        <div>
+
+            <h2>
+                All Categories
+            </h2>
+
+            <p>
+                Explore products from your local stores
+            </p>
+
+        </div>
+
+        <span id="categoryCount">
+            16 Categories
+        </span>
+
+    </div>
+
+
+
+    <div class="all-categories"
+         id="categoryGrid">
+
+
+        <!-- 1 -->
+
+        <div class="category-card"
+             data-category="Grocery"
+             onclick="openCategory('Grocery')">
+
+            <div class="category-card-icon">
+                🛒
+            </div>
+
+            <h3>
                 Grocery
-            </label>
+            </h3>
 
-            <label>
-                <input type="checkbox">
-                Pharmacy
-            </label>
+            <p>
+                Rice, Atta, Dal, Oil
+            </p>
 
-            <label>
-                <input type="checkbox">
+            <span>
+                120+ items
+            </span>
+
+        </div>
+
+
+
+        <!-- 2 -->
+
+        <div class="category-card"
+             data-category="Fruits Vegetables"
+             onclick="openCategory('Fruits & Vegetables')">
+
+            <div class="category-card-icon">
+                🥬
+            </div>
+
+            <h3>
+                Fruits & Vegetables
+            </h3>
+
+            <p>
+                Fresh fruits & vegetables
+            </p>
+
+            <span>
+                85+ items
+            </span>
+
+        </div>
+
+
+
+        <!-- 3 -->
+
+        <div class="category-card"
+             data-category="Dairy Eggs"
+             onclick="openCategory('Dairy & Eggs')">
+
+            <div class="category-card-icon">
+                🥛
+            </div>
+
+            <h3>
+                Dairy & Eggs
+            </h3>
+
+            <p>
+                Milk, Curd, Cheese, Eggs
+            </p>
+
+            <span>
+                60+ items
+            </span>
+
+        </div>
+
+
+
+        <!-- 4 -->
+
+        <div class="category-card"
+             data-category="Snacks Munchies"
+             onclick="openCategory('Snacks & Munchies')">
+
+            <div class="category-card-icon">
+                🍪
+            </div>
+
+            <h3>
+                Snacks & Munchies
+            </h3>
+
+            <p>
+                Chips, Biscuits, Namkeen
+            </p>
+
+            <span>
+                100+ items
+            </span>
+
+        </div>
+
+
+
+        <!-- 5 -->
+
+        <div class="category-card"
+             data-category="Beverages Drinks"
+             onclick="openCategory('Beverages')">
+
+            <div class="category-card-icon">
+                🥤
+            </div>
+
+            <h3>
+                Beverages
+            </h3>
+
+            <p>
+                Cold drinks, Juice, Water
+            </p>
+
+            <span>
+                70+ items
+            </span>
+
+        </div>
+
+
+
+        <!-- 6 -->
+
+        <div class="category-card"
+             data-category="Personal Care"
+             onclick="openCategory('Personal Care')">
+
+            <div class="category-card-icon">
+                🧴
+            </div>
+
+            <h3>
+                Personal Care
+            </h3>
+
+            <p>
+                Soap, Shampoo, Skincare
+            </p>
+
+            <span>
+                90+ items
+            </span>
+
+        </div>
+
+
+
+        <!-- 7 -->
+
+        <div class="category-card"
+             data-category="Household Cleaning"
+             onclick="openCategory('Household')">
+
+            <div class="category-card-icon">
+                🧹
+            </div>
+
+            <h3>
+                Household
+            </h3>
+
+            <p>
+                Cleaning & home essentials
+            </p>
+
+            <span>
+                75+ items
+            </span>
+
+        </div>
+
+
+
+        <!-- 8 -->
+
+        <div class="category-card"
+             data-category="Bakery Cakes"
+             onclick="openCategory('Bakery')">
+
+            <div class="category-card-icon">
+                🥐
+            </div>
+
+            <h3>
                 Bakery
-            </label>
+            </h3>
 
-            <label>
-                <input type="checkbox">
-                Dairy
-            </label>
+            <p>
+                Bread, Cakes, Pastries
+            </p>
 
-            <label>
-                <input type="checkbox">
-                Electronics
-            </label>
+            <span>
+                55+ items
+            </span>
 
-            <label>
-                <input type="checkbox">
+        </div>
+
+
+
+        <!-- 9 -->
+
+        <div class="category-card"
+             data-category="Pharmacy Medicine"
+             onclick="openCategory('Pharmacy')">
+
+            <div class="category-card-icon">
+                💊
+            </div>
+
+            <h3>
+                Pharmacy
+            </h3>
+
+            <p>
+                Health & wellness products
+            </p>
+
+            <span>
+                90+ items
+            </span>
+
+        </div>
+
+
+
+        <!-- 10 -->
+
+        <div class="category-card"
+             data-category="Stationery Books"
+             onclick="openCategory('Stationery')">
+
+            <div class="category-card-icon">
+                📚
+            </div>
+
+            <h3>
                 Stationery
-            </label>
+            </h3>
+
+            <p>
+                Books, Pens, Notebooks
+            </p>
+
+            <span>
+                65+ items
+            </span>
 
         </div>
 
 
-        <!-- RATING -->
 
-        <div class="filter-group">
+        <!-- 11 -->
 
-            <h4>Customer Rating</h4>
+        <div class="category-card"
+             data-category="Electronics Accessories"
+             onclick="openCategory('Electronics')">
 
-            <label>
-                <input type="radio" name="rating">
-                ⭐ 4.5 & above
-            </label>
+            <div class="category-card-icon">
+                🎧
+            </div>
 
-            <label>
-                <input type="radio" name="rating">
-                ⭐ 4.0 & above
-            </label>
+            <h3>
+                Electronics
+            </h3>
 
-            <label>
-                <input type="radio" name="rating">
-                ⭐ 3.5 & above
-            </label>
+            <p>
+                Chargers, Earphones, Cables
+            </p>
+
+            <span>
+                45+ items
+            </span>
+
+        </div>
+
+
+
+        <!-- 12 -->
+
+        <div class="category-card"
+             data-category="Meat Chicken Fish"
+             onclick="openCategory('Meat & Fish')">
+
+            <div class="category-card-icon">
+                🍗
+            </div>
+
+            <h3>
+                Meat & Fish
+            </h3>
+
+            <p>
+                Fresh meat & seafood
+            </p>
+
+            <span>
+                35+ items
+            </span>
 
         </div>
 
 
-        <!-- DELIVERY -->
 
-        <div class="filter-group">
+        <!-- 13 -->
 
-            <h4>Delivery</h4>
+        <div class="category-card"
+             data-category="Baby Care"
+             onclick="openCategory('Baby Care')">
 
-            <label>
-                <input type="checkbox">
-                Fast Delivery
-            </label>
+            <div class="category-card-icon">
+                🍼
+            </div>
 
-            <label>
-                <input type="checkbox">
-                Free Delivery
-            </label>
+            <h3>
+                Baby Care
+            </h3>
 
-            <label>
-                <input type="checkbox">
-                Pickup Available
-            </label>
+            <p>
+                Baby food & essentials
+            </p>
+
+            <span>
+                40+ items
+            </span>
 
         </div>
 
-    </aside>
+
+
+        <!-- 14 -->
+
+        <div class="category-card"
+             data-category="Pet Supplies"
+             onclick="openCategory('Pet Supplies')">
+
+            <div class="category-card-icon">
+                🐕
+            </div>
+
+            <h3>
+                Pet Supplies
+            </h3>
+
+            <p>
+                Pet food & accessories
+            </p>
+
+            <span>
+                30+ items
+            </span>
+
+        </div>
 
 
 
-    <!-- ================= STORE AREA ================= -->
+        <!-- 15 -->
 
-    <section class="store-results">
+        <div class="category-card"
+             data-category="Home Kitchen"
+             onclick="openCategory('Home & Kitchen')">
+
+            <div class="category-card-icon">
+                🍳
+            </div>
+
+            <h3>
+                Home & Kitchen
+            </h3>
+
+            <p>
+                Kitchen & home products
+            </p>
+
+            <span>
+                50+ items
+            </span>
+
+        </div>
 
 
-        <div class="results-header">
+
+        <!-- 16 -->
+
+        <div class="category-card"
+             data-category="Local Special"
+             onclick="openCategory('Local Special')">
+
+            <div class="category-card-icon">
+                ⭐
+            </div>
+
+            <h3>
+                Local Special
+            </h3>
+
+            <p>
+                Products from local sellers
+            </p>
+
+            <span>
+                25+ items
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- NO RESULT -->
+
+    <div class="no-result"
+         id="noResult">
+
+        <div>
+            🔍
+        </div>
+
+        <h3>
+            No category found
+        </h3>
+
+        <p>
+            Try searching for another category.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= WHY SHOP LOCAL ================= -->
+
+<section class="local-section">
+
+    <div class="local-content">
+
+        <span class="small-title">
+            WHY SHOP LOCAL?
+        </span>
+
+        <h2>
+            Har Shopping Mein
+            <span>Local Dukandaar</span>
+            Ka Saath
+        </h2>
+
+        <p>
+            NearBy Dukan ke through aap apne aas-paas
+            ke local stores se easily shopping kar sakte hain.
+            Aapki shopping local businesses ko grow karne
+            mein help karti hai.
+        </p>
+
+
+        <div class="local-benefits">
 
             <div>
 
-                <h2>
-                    Nearby Stores
-                </h2>
+                <i class="fa-solid fa-location-dot"></i>
 
-                <p>
-                    24 stores found near you
-                </p>
+                <div>
+                    <strong>
+                        Nearby Stores
+                    </strong>
 
-            </div>
-
-
-            <select id="sortStores">
-
-                <option value="near">
-                    Sort: Nearest
-                </option>
-
-                <option value="rating">
-                    Highest Rated
-                </option>
-
-                <option value="delivery">
-                    Fastest Delivery
-                </option>
-
-                <option value="popular">
-                    Most Popular
-                </option>
-
-            </select>
-
-        </div>
-
-
-
-        <!-- STORE GRID -->
-
-        <div class="store-grid" id="storeGrid">
-
-
-            <!-- STORE 1 -->
-
-            <div class="store-item"
-                 data-name="Sharma Kirana Store">
-
-                <div class="store-photo store-photo-1">
-
-                    <span class="open-badge">
-                        Open
-                    </span>
-
-                    <button class="heart-btn">
-                        ♡
-                    </button>
-
-                </div>
-                <div class="store-info">
-                    <div class="store-title">
-                        <h3>
-                            Sharma Kirana Store
-                        </h3>
-
-                        <span class="rating-badge">
-                            ⭐ 4.5
-                        </span>
-
-                    </div>
-
-                    <p class="store-category">
-                        Grocery • Daily Essentials
-                    </p>
-
-
-                    <div class="store-location">
-
-                        <span>
-                            <i class="fa-solid fa-location-dot"></i>
-                            0.2 km away
-                        </span>
-
-                        <span>
-                            <i class="fa-regular fa-clock"></i>
-                            30-40 min
-                        </span>
-
-                    </div>
-
-
-                    <div class="store-bottom">
-
-                        <span class="delivery">
-                            Free delivery
-                        </span>
-
-                        <button class="view-btn"
-                                onclick="openStore('Sharma')">
-                            View Store
-                        </button>
-
-                    </div>
-
+                    <small>
+                        Apne area ki dukane
+                    </small>
                 </div>
 
             </div>
 
 
+            <div>
 
-            <!-- STORE 2 -->
+                <i class="fa-solid fa-bolt"></i>
 
-            <div class="store-item"
-                 data-name="Verma General Store">
+                <div>
+                    <strong>
+                        Fast Delivery
+                    </strong>
 
-                <div class="store-photo store-photo-2">
-
-                    <span class="open-badge">
-                        Open
-                    </span>
-
-                    <button class="heart-btn">
-                        ♡
-                    </button>
-
-                </div>
-
-
-                <div class="store-info">
-
-                    <div class="store-title">
-
-                        <h3>
-                            Verma General Store
-                        </h3>
-
-                        <span class="rating-badge">
-                            ⭐ 4.2
-                        </span>
-
-                    </div>
-
-                    <p class="store-category">
-                        Grocery • Household
-                    </p>
-
-
-                    <div class="store-location">
-
-                        <span>
-                            <i class="fa-solid fa-location-dot"></i>
-                            0.4 km away
-                        </span>
-
-                        <span>
-                            <i class="fa-regular fa-clock"></i>
-                            25-35 min
-                        </span>
-
-                    </div>
-
-
-                    <div class="store-bottom">
-
-                        <span class="delivery">
-                            Free delivery
-                        </span>
-
-                        <button class="view-btn"
-                                onclick="openStore('verma')">
-                            View Store
-                        </button>
-
-                    </div>
-
+                    <small>
+                        Jaldi delivery
+                    </small>
                 </div>
 
             </div>
 
 
+            <div>
 
-            <!-- STORE 3 -->
+                <i class="fa-solid fa-hand-holding-heart"></i>
 
-            <div class="store-item"
-                 data-name="Gupta Provision Store">
+                <div>
+                    <strong>
+                        Support Local
+                    </strong>
 
-                <div class="store-photo store-photo-3">
-
-                    <span class="open-badge">
-                        Open
-                    </span>
-
-                    <button class="heart-btn">
-                        ♡
-                    </button>
-
-                </div>
-
-
-                <div class="store-info">
-
-                    <div class="store-title">
-
-                        <h3>
-                            Gupta Provision Store
-                        </h3>
-
-                        <span class="rating-badge">
-                            ⭐ 4.6
-                        </span>
-
-                    </div>
-
-                    <p class="store-category">
-                        Grocery • Beverages
-                    </p>
-
-
-                    <div class="store-location">
-
-                        <span>
-                            <i class="fa-solid fa-location-dot"></i>
-                            0.6 km away
-                        </span>
-
-                        <span>
-                            <i class="fa-regular fa-clock"></i>
-                            30-45 min
-                        </span>
-
-                    </div>
-
-
-                    <div class="store-bottom">
-
-                        <span class="delivery">
-                            Free delivery
-                        </span>
-
-                        <button class="view-btn"
-                                onclick="openStore('gupta')">
-                            View Store
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- STORE 4 -->
-
-            <div class="store-item"
-                 data-name="Patel Departmental Store">
-
-                <div class="store-photo store-photo-4">
-
-                    <span class="open-badge">
-                        Open
-                    </span>
-
-                    <button class="heart-btn">
-                        ♡
-                    </button>
-
-                </div>
-
-
-                <div class="store-info">
-
-                    <div class="store-title">
-
-                        <h3>
-                            Patel Departmental Store
-                        </h3>
-
-                        <span class="rating-badge">
-                            ⭐ 4.3
-                        </span>
-
-                    </div>
-
-                    <p class="store-category">
-                        Grocery • Personal Care
-                    </p>
-
-
-                    <div class="store-location">
-
-                        <span>
-                            <i class="fa-solid fa-location-dot"></i>
-                            0.7 km away
-                        </span>
-
-                        <span>
-                            <i class="fa-regular fa-clock"></i>
-                            35-50 min
-                        </span>
-
-                    </div>
-
-
-                    <div class="store-bottom">
-
-                        <span class="delivery">
-                            Free delivery
-                        </span>
-
-                        <button class="view-btn"
-                                onclick="openStore('patel')">
-                            View Store
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- STORE 5 -->
-
-            <div class="store-item"
-                 data-name="Kumar Dairy and Sweets">
-
-                <div class="store-photo store-photo-5">
-
-                    <span class="open-badge">
-                        Open
-                    </span>
-
-                    <button class="heart-btn">
-                        ♡
-                    </button>
-
-                </div>
-
-
-                <div class="store-info">
-
-                    <div class="store-title">
-
-                        <h3>
-                            Kumar Dairy & Sweets
-                        </h3>
-
-                        <span class="rating-badge">
-                            ⭐ 4.7
-                        </span>
-
-                    </div>
-
-                    <p class="store-category">
-                        Dairy • Bakery • Sweets
-                    </p>
-
-
-                    <div class="store-location">
-
-                        <span>
-                            <i class="fa-solid fa-location-dot"></i>
-                            0.9 km away
-                        </span>
-
-                        <span>
-                            <i class="fa-regular fa-clock"></i>
-                            20-30 min
-                        </span>
-
-                    </div>
-
-
-                    <div class="store-bottom">
-
-                        <span class="delivery">
-                            Free delivery
-                        </span>
-
-                        <button class="view-btn"
-                                onclick="openStore('kumar')">
-                            View Store
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- STORE 6 -->
-
-            <div class="store-item"
-                 data-name="Maa Laxmi Bakery">
-
-                <div class="store-photo store-photo-6">
-
-                    <span class="closed-badge">
-                        Closed
-                    </span>
-
-                    <button class="heart-btn">
-                        ♡
-                    </button>
-
-                </div>
-
-
-                <div class="store-info">
-
-                    <div class="store-title">
-
-                        <h3>
-                            Maa Laxmi Bakery
-                        </h3>
-
-                        <span class="rating-badge">
-                            ⭐ 4.4
-                        </span>
-
-                    </div>
-
-                    <p class="store-category">
-                        Bakery • Cakes • Snacks
-                    </p>
-
-
-                    <div class="store-location">
-
-                        <span>
-                            <i class="fa-solid fa-location-dot"></i>
-                            1.1 km away
-                        </span>
-
-                        <span>
-                            <i class="fa-regular fa-clock"></i>
-                            35-45 min
-                        </span>
-
-                    </div>
-
-
-                    <div class="store-bottom">
-
-                        <span class="delivery">
-                            Pickup available
-                        </span>
-
-                        <button class="view-btn"
-                                onclick="openStore('laxmi')">
-                            View Store
-                        </button>
-
-                    </div>
-
+                    <small>
+                        Local business ko grow karein
+                    </small>
                 </div>
 
             </div>
 
         </div>
 
+    </div>
 
 
-        <!-- PAGINATION -->
+    <div class="local-illustration">
 
-        <div class="pagination">
-
-            <button>
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-
-            <button class="page-active">
-                1
-            </button>
-
-            <button>
-                2
-            </button>
-
-            <button>
-                3
-            </button>
-
-            <button>
-                4
-            </button>
-
-            <button>
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-
+        <div class="big-shop">
+            🏪
         </div>
 
-    </section>
+        <div class="floating-card card-one">
+            🛒 Easy Shopping
+        </div>
 
-</main>
+        <div class="floating-card card-two">
+            🚚 Fast Delivery
+        </div>
+
+    </div>
+
+</section>
 
 
 
@@ -818,11 +763,13 @@
 
     <div class="footer-links">
 
-        <a href="home.css">Home</a>
-        <a href="stores.html">Stores</a>
-        <a href="categories.html">Categories</a>
-        <a href="offers.html">Offers</a>
-        <a href="about.html">About Us</a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('stores') }}">stores</a>
+        <a href="{{ url_for('categories') }}">categories</a>
+        <a href="{{ url_for('offers') }}">offers</a>
+
+
+        <a href="{{ url_for('about') }}">About Us</a>
 
     </div>
 
@@ -2028,9 +1975,10 @@
     </div>
 
 </div>
-<script src="auth.js"></script>
+<script src="{{url_for('static',filename='js/auth.js')}}"></script>
+<script src="{{url_for('static',filename='js/categories.js')}}"></script>
 
-<script src="stores.js"></script>
 
 </body>
+
 </html>

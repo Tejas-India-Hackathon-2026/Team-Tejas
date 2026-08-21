@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<title>Products - NearBy Dukan</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sellerDashboard.css') }}">
+</head>
+
+<body>
+<div class="seller-layout">
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-shop"></i>
+</div>
+
+<div>
+<h2>NearBy Dukan</h2>
+<span>Seller Panel</span>
+</div>
+
+</div>
+
+
+<nav class="sidebar-nav">
+<a href="{{ url_for('sellerDashboard') class="nav-link">
+<i class="fa-solid fa-chart-pie"></i>
+Dashboard
+</a>
+
+<a href="{{url('sellerStore')}}" class="nav-link">
+<i class="fa-solid fa-store"></i>
+My Store
+</a>
+
+<a href="{{url_for('sellerProduct')}}" class="nav-link">
+<i class="fa-solid fa-box"></i>
+Products
+</a>
+
+<a href="{{url_for('sellerInventory')}}" class="nav-link">
+<i class="fa-solid fa-warehouse"></i>
+Inventory
+</a>
+
+<a href="{{url_for('sellerOrder')}}" class="nav-link">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</a>
+
+<a href="{{url_for('sellerOffer')}}" class="nav-link">
+<i class="fa-solid fa-tags"></i>
+Offers
+</a>
+
+<a href="{{url_for('sellerCustomer')}}" class="nav-link">
+<i class="fa-solid fa-users"></i>
+Customers
+</a>
+
+<a href="{{url_for('sellerAnalytics')}}" class="nav-link active">
+<i class="fa-solid fa-chart-line"></i>
+Analytics
+</a>
+
+<a href="{{url_for('sellerSetting')}}" class="nav-link">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+</nav>
+
+</aside>
+
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div class="topbar-left">
+
+<h1>Products</h1>
+
+<p>
+Manage your store products
+</p>
+
+</div>
+
+</header>
+
+
+<section class="dashboard-content">
+
+
+<div class="welcome-card">
+
+<div>
+
+<span class="welcome-label">
+PRODUCT MANAGEMENT
+</span>
+
+<h2>
+Your Products
+</h2>
+
+<p>
+Add, edit and manage products available in your store.
+</p>
+
+</div>
+
+<button
+class="primary-btn"
+onclick="addProduct()">
+
+<i class="fa-solid fa-plus"></i>
+Add Product
+
+</button>
+
+</div>
+
+
+<div class="dashboard-card">
+
+<div class="card-header">
+
+<div>
+<h3>Product List</h3>
+<p>128 products in your store</p>
+</div>
+
+<input
+class="search-input"
+id="productSearch"
+onkeyup="searchProducts()"
+placeholder="Search product...">
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Product</th>
+<th>Category</th>
+<th>Price</th>
+<th>Stock</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="productTable">
+
+<tr>
+
+<td>
+<strong>Amul Milk 1L</strong>
+</td>
+
+<td>Dairy</td>
+
+<td>₹65</td>
+
+<td>25</td>
+
+<td>
+<span class="status success">
+Available
+</span>
+</td>
+
+<td>
+
+<button class="small-btn"
+onclick="editProduct('Amul Milk 1L')">
+Edit
+</button>
+
+<button class="delete-btn"
+onclick="deleteProduct('Amul Milk 1L')">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Fortune Rice 5kg</strong>
+</td>
+
+<td>Grocery</td>
+
+<td>₹450</td>
+
+<td>5</td>
+
+<td>
+<span class="status warning">
+Low Stock
+</span>
+</td>
+
+<td>
+
+<button class="small-btn">
+Edit
+</button>
+
+<button class="delete-btn">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Parle-G Biscuits</strong>
+</td>
+
+<td>Snacks</td>
+
+<td>₹10</td>
+
+<td>80</td>
+
+<td>
+<span class="status success">
+Available
+</span>
+</td>
+
+<td>
+
+<button class="small-btn">
+Edit
+</button>
+
+<button class="delete-btn">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+
+<script src="{{url_for('static',filename='js/sellerDashboard.js')}}"></script>
+<script>
+
+function addProduct() {
+
+alert("Add Product form will open here.");
+
+}
+
+
+function editProduct(name) {
+
+alert("Editing " + name);
+
+}
+
+
+function deleteProduct(name) {
+
+if(confirm("Delete " + name + "?")) {
+
+alert("Product deleted.");
+
+}
+
+}
+
+
+function searchProducts() {
+
+const search =document.getElementById("productSearch").value.toLowerCase();
+
+const rows = document.querySelectorAll("#productTable tr");
+
+rows.forEach(row => {
+
+row.style.display =row.innerText.toLowerCase().includes(search)? "": "none";
+
+});
+
+}
+</script>
+</body>
+</html>

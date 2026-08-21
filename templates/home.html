@@ -1,831 +1,383 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>About Us | NearBy Dukan</title>
-
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="auth.css">
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-</head>
-
-<body>
-
-
-<!-- ================= NAVBAR ================= -->
-
-<header class="navbar">
-
-    <div class="logo-section">
-
-        <div class="logo-icon">
-            <i class="fa-solid fa-shop"></i>
-        </div>
-
-        <div>
-
-            <div class="logo">
-                NearBy <span>Dukan</span>
-            </div>
-
-            <div class="tagline">
-                Apki Dukan, Ab Online
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="location">
-
-        <i class="fa-solid fa-location-dot"></i>
-
-        <span>
-            Patna, Bihar
-        </span>
-
-    </div>
-
-
-    <nav class="nav-links">
-
-        <a href="home.html">
-            Home
-        </a>
-
-        <a href="stores.html">
-            Stores
-        </a>
-
-        <a href="categories.html">
-            Categories
-        </a>
-
-        <a href="offers.html">
-            Offers
-        </a>
-
-        <a href="about.html"
-           class="active">
-            About Us
-        </a>
-
-    </nav>
-
-
-    <div class="nav-actions">
-
-        <a href="cart.html" class="cart">
-    <i class="fa-solid fa-cart-shopping"></i>
-    <span id="cartCount">0</span>
-                </a>
-
-        <button class="login-btn" onclick="openLoginModal()">
-            Login / Sign Up
-        </button>
-
-    </div>
-
-</header>
-
-
-
+{% include 'header.html'%}
 <!-- ================= HERO ================= -->
-
-<section class="about-hero">
-
-    <div class="about-hero-content">
-
-        <div class="breadcrumb">
-
-            <a href="home.html">
-                Home
-            </a>
-
-            <span>/</span>
-
-            <strong>
-                About Us
-            </strong>
-
-        </div>
-
-
-        <span class="about-label">
-            🌱 OUR STORY
-        </span>
-
-
+<section class="hero">
+    <div class="hero-content">
         <h1>
-            Bringing Your
-            <span>Local Dukan</span>
-            Online
+            Apke Pass Ki<br>
+            Dukan, <span>Ab Online!</span>
         </h1>
-
-
         <p>
-            NearBy Dukan ek digital platform hai jo
-            customers ko unke aas-paas ke local stores
-            se connect karta hai.
+            Nearby stores se saman kharidein,
+            local dukandaar ko support karein.
         </p>
-
-
-        <div class="hero-buttons">
-
-            <button onclick="scrollToMission()">
-                Discover Our Mission
-                <i class="fa-solid fa-arrow-right"></i>
+        <!-- SEARCH -->
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for products, stores..."
+            >
+            <button onclick="searchStore()">
+                Search
             </button>
-
-            <a href="stores.html">
-                Explore Stores
-            </a>
-
         </div>
-
+        <!-- BENEFITS -->
+        <div class="benefits">
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                    <strong>Near By Stores</strong>
+                    <small>Apke paas ki dukane</small>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+                <div>
+                    <strong>Fast Delivery</strong>
+                    <small>Jaldi ghar pahunchayen</small>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <strong>Support Local</strong>
+                    <small>Local dukandaar ka saath</small>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- STORE ILLUSTRATION -->
 
-
-    <div class="about-hero-visual">
-
-        <div class="shop-building">
-            🏪
+    <div class="hero-image">
+        <div class="store-building">
+            <div class="store-board">
+                आपकी अपनी दुकान
+            </div>
+            <div class="store-roof"></div>
+            <div class="store-front">
+                <div class="shelf shelf1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="shelf shelf2">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="counter">
+                    <div class="counter-products">
+                        🛒 🥫 🧃
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- MOBILE PREVIEW -->
 
-        <div class="customer-icon">
-            🛒
+        <div class="phone">
+            <div class="phone-top"></div>
+            <div class="phone-content">
+                <div class="phone-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Patna, Bihar
+                </div>
+                <div class="phone-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search products
+                </div>
+                <div class="offer-card">
+                    <div>
+                        <strong>Local Stores</strong>
+                        <br>
+                        <strong>Great Offers!</strong>
+                    </div>
+                    <span>🥬</span>
+                </div>
+                <h4>Shop by Categories</h4>
+                <div class="phone-categories">
+                    <span>🥦<small>Grocery</small></span>
+                    <span>🥛<small>Dairy</small></span>
+                    <span>🍪<small>Snacks</small></span>
+                    <span>🥤<small>Drinks</small></span>
+                </div>
+                <h4>Nearby Stores</h4> ̰
+                <div class="mini-store">
+                    <div class="mini-store-img">
+                        🏪
+                    </div>
+                    <div>
+                        <strong>Sharma Kirana</strong>
+
+                        <small>
+                            ⭐ 4.5
+                        </small>
+
+                        <small>
+                            30-40 min
+                        </small>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="phone-nav">
+                <span>
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </span>
+                <span>
+                    <i class="fa-solid fa-store"></i>
+                    Stores
+                </span>
+                <span>
+                    <i class="fa-solid fa-box"></i>
+                    Orders
+                </span>
+                <span>
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </span>
+            </div>
         </div>
-
-        <div class="connection-line">
-            ↔
-        </div>
-
-        <div class="online-card">
-            <i class="fa-solid fa-globe"></i>
-            <span>
-                Local Store
-                <small>Now Online</small>
-            </span>
-        </div>
-
     </div>
-
 </section>
-
-
-
-<!-- ================= PROBLEM ================= -->
-
-<section class="problem-section"
-         id="mission">
-
-    <div class="section-heading center">
-
-        <span>
-            THE PROBLEM
-        </span>
-
-        <h2>
-            Why Did We Build
-            <strong>NearBy Dukan?</strong>
-        </h2>
-
-        <p>
-            Local stores are an important part of our
-            communities, but many of them still face
-            challenges in the digital world.
-        </p>
-
+<!-- ================= CATEGORIES ================= -->
+<section class="section" id="categories">
+    <div class="section-header">
+        <h2>Shop by Categories</h2>
+        <a href="#">View All</a>
     </div>
-
-
-    <div class="problem-grid">
-
-
-        <div class="problem-card">
-
-            <div class="problem-icon">
-                📱
-            </div>
-
-            <h3>
-                Limited Online Presence
-            </h3>
-
-            <p>
-                Many local shops do not have an easy
-                way to showcase their products online.
-            </p>
-
+    <div class="categories">
+        <div class="category">
+            <div class="category-icon">🥬</div>
+            <span>Grocery</span>
         </div>
-
-
-        <div class="problem-card">
-
-            <div class="problem-icon">
-                🔍
-            </div>
-
-            <h3>
-                Difficult Product Discovery
-            </h3>
-
-            <p>
-                Customers often don't know which nearby
-                store has the product they need.
-            </p>
-
+        <div class="category">
+            <div class="category-icon">🥛</div>
+            <span>Dairy & Eggs</span>
         </div>
-
-
-        <div class="problem-card">
-
-            <div class="problem-icon">
-                📦
-            </div>
-
-            <h3>
-                Inventory Challenges
-            </h3>
-
-            <p>
-                Store owners need a simple way to manage
-                their products and availability.
-            </p>
-
+        <div class="category">
+            <div class="category-icon">🍪</div>
+            <span>Snacks & Munchies</span>
         </div>
-
-
-        <div class="problem-card">
-
-            <div class="problem-icon">
-                🤝
-            </div>
-
-            <h3>
-                Customer Connection
-            </h3>
-
-            <p>
-                Local businesses need better ways to
-                connect with their nearby customers.
-            </p>
-
+        <div class="category">
+            <div class="category-icon">🥤</div>
+            <span>Beverages</span>
         </div>
-
+        <div class="category">
+            <div class="category-icon">🧴</div>
+            <span>Personal Care</span>
+        </div>
+        <div class="category">
+            <div class="category-icon">🧹</div>
+            <span>Household</span>
+        </div>
+        <div class="category">
+            <div class="category-icon">🍎</div>
+            <span>Fruits & Vegetables</span>
+        </div>
+        <div class="category">
+            <div class="category-icon">🥐</div>
+            <span>Bakery</span>
+        </div>
+        <div class="category more-category">
+            <div class="category-icon">•••</div>
+            <span>More</span>
+        </div>
     </div>
-
 </section>
-
-
-
-<!-- ================= SOLUTION ================= -->
-
-<section class="solution-section">
-
-    <div class="solution-visual">
-
-        <div class="solution-circle">
-
-            <i class="fa-solid fa-shop"></i>
-
-        </div>
-
-        <div class="solution-mini mini-one">
-            📱
-        </div>
-
-        <div class="solution-mini mini-two">
-            🛒
-        </div>
-
-        <div class="solution-mini mini-three">
-            🚚
-        </div>
-
+<!-- ================= NEARBY STORES ================= -->
+<section class="section" id="stores">
+    <div class="section-header">
+        <h2>Nearby Stores For You</h2>
+        <a href="#">View All</a>
     </div>
+    <div class="stores">
 
+        <!-- STORE 1 -->
 
-    <div class="solution-content">
+        <div class="store-card">
 
-        <span class="section-label">
-            OUR SOLUTION
-        </span>
+            <div class="store-image store-one">
 
-        <h2>
-            One Platform.
-            <span>Many Local Stores.</span>
-        </h2>
-
-        <p>
-            NearBy Dukan local shopkeepers ko digital
-            platform provide karta hai jahan wo apne
-            products, prices, offers aur inventory ko
-            manage kar sakte hain.
-        </p>
-
-        <p>
-            Customers nearby stores discover kar sakte hain,
-            products browse kar sakte hain, offers dekh sakte
-            hain aur convenient way mein order kar sakte hain.
-        </p>
-
-
-        <div class="solution-points">
-
-            <div>
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                    Discover nearby stores
-                </span>
+                <button class="favorite">
+                    ♡
+                </button>
 
             </div>
 
 
-            <div>
+            <div class="store-details">
 
-                <i class="fa-solid fa-check"></i>
+                <div class="store-name-row">
 
-                <span>
-                    Browse products & categories
-                </span>
+                    <h3>Sharma Kirana Store</h3>
 
+                    <span class="rating">
+                        4.5
+                    </span>
+
+                </div>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    0.2 km away
+                </p>
+
+                <p>
+                    <i class="fa-regular fa-clock"></i>
+                    30-40 min
+                </p>
+                <button class="view-btn" onclick="openStore('sharma')">
+                    View Store
+                </button>
             </div>
-
-
-            <div>
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                    Find local offers
-                </span>
-
-            </div>
-
-
-            <div>
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                    Support local businesses
-                </span>
-
-            </div>
-
         </div>
+        <!-- STORE 2 -->
 
+        <div class="store-card">
+
+            <div class="store-image store-two">
+
+                <button class="favorite">
+                    ♡
+                </button>
+            </div>
+            <div class="store-details">
+                <div class="store-name-row">
+                    <h3>Verma General Store</h3>
+
+                    <span class="rating">
+                        4.2
+                    </span>
+                </div>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    0.4 km away
+                </p>
+                <p>
+                    <i class="fa-regular fa-clock"></i>
+                    25-35 min
+                </p>
+                <button class="view-btn"
+            onclick="openStore('verma')">
+        View Store
+    </button>
+            </div>
+        </div>
+        <!-- STORE 3 -->
+        <div class="store-card">
+            <div class="store-image store-three">
+                <button class="favorite">
+                    ♡
+                </button>
+            </div>
+            <div class="store-details">
+                <div class="store-name-row">
+                    <h3>Gupta Provision Store</h3>
+                    <span class="rating">
+                        4.6
+                    </span>
+                </div>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    0.6 km away
+                </p>
+                <p>
+                    <i class="fa-regular fa-clock"></i>
+                    30-45 min
+                </p>
+                <button class="view-btn"
+            onclick="openStore('gupta')">
+        View Store
+    </button>
+            </div>
+        </div>
+        <!-- STORE 4 -->
+        <div class="store-card">
+            <div class="store-image store-four">
+                <button class="favorite">
+                    ♡
+                </button>
+            </div>
+            <div class="store-details">
+                <div class="store-name-row">
+                    <h3>Patel Departmental Store</h3>
+                    <span class="rating">
+                        4.3
+                    </span>
+                </div>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    0.7 km away
+                </p>
+
+                <p>
+                    <i class="fa-regular fa-clock"></i>
+                    35-50 min
+                </p>
+                <button class="view-btn"
+            onclick="openStore('patel')">
+        View Store
+    </button>
+            </div>
+        </div>
     </div>
-
 </section>
-
-
-
-<!-- ================= HOW IT WORKS ================= -->
-
-<section class="works-section">
-
-    <div class="section-heading center">
-
-        <span>
-            HOW IT WORKS
-        </span>
-
-        <h2>
-            Simple For
-            <strong>Everyone</strong>
-        </h2>
-
-        <p>
-            Customers aur shopkeepers dono ke liye
-            simple aur easy experience.
-        </p>
+<!-- ================= FEATURES ================= -->
+<section class="features">
+    <div class="feature">
+        <div class="feature-icon">
+            <i class="fa-solid fa-phone"></i>
+        </div>
+        <div>
+            <strong>Easy Ordering</strong>
+            <p>Simple aur aasan ordering</p>
+        </div>
+    </div>
+    <div class="feature">
+        <div class="feature-icon">
+            <i class="fa-regular fa-credit-card"></i>
+        </div>
+        <div>
+            <strong>Secure Payments</strong>
+            <p>100% safe payments</p>
+        </div>
 
     </div>
 
 
-    <div class="works-container">
+    <div class="feature">
 
-
-        <!-- CUSTOMER -->
-
-        <div class="works-box">
-
-            <div class="works-title">
-
-                <div class="works-icon">
-                    🛒
-                </div>
-
-                <div>
-
-                    <h3>
-                        For Customers
-                    </h3>
-
-                    <p>
-                        Shop nearby with ease
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="work-step">
-
-                <span>
-                    01
-                </span>
-
-                <div>
-                    <strong>
-                        Find Nearby Stores
-                    </strong>
-
-                    <small>
-                        Apne location ke paas stores discover karein.
-                    </small>
-                </div>
-
-            </div>
-
-
-            <div class="work-step">
-
-                <span>
-                    02
-                </span>
-
-                <div>
-                    <strong>
-                        Browse Products
-                    </strong>
-
-                    <small>
-                        Products, categories aur prices dekhein.
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <div class="work-step">
-
-                <span>
-                    03
-                </span>
-
-                <div>
-                    <strong>
-                        Order & Save
-                    </strong>
-
-                    <small>
-                        Offers ka benefit lekar order karein.
-                    </small>
-
-                </div>
-
-            </div>
-
+        <div class="feature-icon">
+            <i class="fa-solid fa-tags"></i>
         </div>
-
-
-
-        <!-- STORE OWNER -->
-
-        <div class="works-box store-box">
-
-            <div class="works-title">
-
-                <div class="works-icon">
-                    🏪
-                </div>
-
-                <div>
-
-                    <h3>
-                        For Store Owners
-                    </h3>
-
-                    <p>
-                        Take your shop online
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="work-step">
-
-                <span>
-                    01
-                </span>
-
-                <div>
-
-                    <strong>
-                        Create Store Profile
-                    </strong>
-
-                    <small>
-                        Apni shop ko platform par register karein.
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <div class="work-step">
-
-                <span>
-                    02
-                </span>
-
-                <div>
-
-                    <strong>
-                        Manage Products
-                    </strong>
-
-                    <small>
-                        Products, prices aur inventory manage karein.
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <div class="work-step">
-
-                <span>
-                    03
-                </span>
-
-                <div>
-
-                    <strong>
-                        Reach More Customers
-                    </strong>
-
-                    <small>
-                        Nearby customers ke saath connect karein.
-                    </small>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= VALUES ================= -->
-
-<section class="values-section">
-
-    <div class="section-heading center">
-
-        <span>
-            OUR VALUES
-        </span>
-
-        <h2>
-            What We
-            <strong>Believe In</strong>
-        </h2>
-
-    </div>
-
-
-    <div class="values-grid">
-
-
-        <div class="value-card">
-
-            <div>
-                🤝
-            </div>
-
-            <h3>
-                Support Local
-            </h3>
-
-            <p>
-                Local businesses ko grow karne mein
-                help karna hamara core mission hai.
-            </p>
-
-        </div>
-
-
-        <div class="value-card">
-
-            <div>
-                ❤️
-            </div>
-
-            <h3>
-                Community First
-            </h3>
-
-            <p>
-                Customers aur local shopkeepers ke
-                beech strong connection banana.
-            </p>
-
-        </div>
-
-
-        <div class="value-card">
-
-            <div>
-                ⚡
-            </div>
-
-            <h3>
-                Simplicity
-            </h3>
-
-            <p>
-                Technology ko simple aur accessible
-                banana for everyone.
-            </p>
-
-        </div>
-
-
-        <div class="value-card">
-
-            <div>
-                🌱
-            </div>
-
-            <h3>
-                Grow Together
-            </h3>
-
-            <p>
-                Customers aur businesses dono ke
-                growth ko support karna.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= IMPACT ================= -->
-
-<section class="impact-section">
-
-    <div class="impact-content">
-
-        <span>
-            OUR VISION
-        </span>
-
-        <h2>
-            Har Local Dukan Ko
-            <strong>Digital Banana</strong>
-        </h2>
-
-        <p>
-            Humara vision ek aisa local commerce ecosystem
-            banana hai jahan customers ko nearby products
-            easily mil sakein aur local businesses ko
-            digital world mein grow karne ka opportunity mile.
-        </p>
-
-
-        <button onclick="goToStores()">
-            Start Shopping
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
-
-    </div>
-
-
-    <div class="impact-stats">
 
         <div>
-
-            <strong>
-                100+
-            </strong>
-
-            <span>
-                Local Stores
-            </span>
-
-        </div>
-
-
-        <div>
-
-            <strong>
-                1000+
-            </strong>
-
-            <span>
-                Products
-            </span>
-
-        </div>
-
-
-        <div>
-
-            <strong>
-                10+
-            </strong>
-
-            <span>
-                Categories
-            </span>
-
-        </div>
-
-
-        <div>
-
-            <strong>
-                1
-            </strong>
-
-            <span>
-                Local Community
-            </span>
-
+            <strong>Best Prices</strong>
+            <p>Saste daam, best quality</p>
         </div>
 
     </div>
 
-</section>
 
+    <div class="feature">
 
+        <div class="feature-icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
 
-<!-- ================= CTA ================= -->
-
-<section class="about-cta">
-
-    <div>
-
-        <span>
-            SHOP LOCAL • SUPPORT LOCAL
-        </span>
-
-        <h2>
-            Ready to Discover
-            Your Nearby Dukan?
-        </h2>
-
-        <p>
-            Apne area ke local stores explore karein
-            aur shopping ko simple banayein.
-        </p>
-
-        <button onclick="goToStores()">
-            Explore Nearby Stores
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
+        <div>
+            <strong>Quick Support</strong>
+            <p>Hum hamesha aapke saath</p>
+        </div>
 
     </div>
 
@@ -838,11 +390,8 @@
 <footer>
 
     <div class="footer-logo">
-
         <i class="fa-solid fa-shop"></i>
-
         NearBy <span>Dukan</span>
-
     </div>
 
     <p>
@@ -850,31 +399,17 @@
         Shop nearby. Support local.
     </p>
 
-
     <div class="footer-links">
 
-        <a href="home.html">
-            Home
-        </a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('stores') }}">stores</a>
+        <a href="{{ url_for('categories') }}">categories</a>
+        <a href="{{ url_for('offers') }}">offers</a>
 
-        <a href="stores.html">
-            Stores
-        </a>
 
-        <a href="categories.html">
-            Categories
-        </a>
-
-        <a href="offers.html">
-            Offers
-        </a>
-
-        <a href="about.html">
-            About Us
-        </a>
+        <a href="{{ url_for('about') }}">About Us</a>
 
     </div>
-
 
     <p class="copyright">
         © 2026 NearBy Dukan. All Rights Reserved.
@@ -920,7 +455,7 @@
             </div>
 
 
-            <form onsubmit="loginUser(event)">
+            <form  action="/login" onsubmit="loginUser(event)" method="POST">
 
                 <!-- EMAIL -->
 
@@ -985,14 +520,9 @@
                             onclick="togglePassword('loginPassword', this)">
 
                             <i class="fa-regular fa-eye"></i>
-
                         </button>
-
                     </div>
-
                 </div>
-
-
                 <!-- ACCOUNT TYPE -->
 
                 <div class="account-type-login">
@@ -1071,13 +601,8 @@
                     Sign Up
 
                 </button>
-
             </div>
-
         </div>
-
-
-
         <!-- =================================================
              ACCOUNT TYPE SELECTION
         ================================================== -->
@@ -1101,262 +626,158 @@
                 </p>
 
             </div>
-
-
             <div class="account-selection">
-
-
                 <!-- CUSTOMER -->
-
                 <button
                     class="account-choice customer-choice"
                     onclick="showCustomerSignup()">
-
                     <div class="choice-icon">
                         🛒
                     </div>
-
                     <div class="choice-content">
-
                         <h3>
                             Create Customer Account
                         </h3>
-
                         <p>
                             Find nearby stores, browse products
                             and place orders.
                         </p>
-
                     </div>
-
                     <i class="fa-solid fa-chevron-right"></i>
-
                 </button>
-
-
-
                 <!-- SELLER -->
-
                 <button
                     class="account-choice seller-choice"
                     onclick="showSellerSignup()">
-
                     <div class="choice-icon">
                         🏪
                     </div>
-
                     <div class="choice-content">
-
                         <h3>
                             Create Seller Account
                         </h3>
-
                         <p>
                             Take your local store online and
                             reach nearby customers.
                         </p>
-
                     </div>
-
                     <i class="fa-solid fa-chevron-right"></i>
-
                 </button>
-
             </div>
-
-
             <div class="back-login">
-
                 Already have an account?
-
                 <button
                     onclick="showLogin()">
-
                     Login
-
                 </button>
-
             </div>
-
         </div>
-
-
-
         <!-- =================================================
              CUSTOMER SIGN UP
         ================================================== -->
-
         <div class="auth-page signup-page hidden"
              id="customerSignupPage">
-
             <div class="signup-heading">
-
                 <button
                     class="back-button"
                     onclick="showAccountSelection()">
-
                     <i class="fa-solid fa-arrow-left"></i>
-
                 </button>
-
                 <div>
-
                     <h2>
                         Create Customer Account
                     </h2>
-
                     <p>
                         Join NearBy Dukan and shop locally.
                     </p>
-
                 </div>
-
             </div>
-
-
-            <form onsubmit="createCustomerAccount(event)">
-
-
+            <form action="/account" onsubmit="createCustomerAccount(event)">
                 <!-- FULL NAME -->
-
                 <div class="form-group">
-
                     <label>
                         Full Name *
                     </label>
-
                     <div class="input-box">
-
                         <i class="fa-regular fa-user"></i>
-
                         <input
                             type="text"
                             id="customerName"
                             placeholder="Enter your full name"
                             required
                         >
-
                     </div>
-
                 </div>
-
-
-
                 <!-- EMAIL + MOBILE -->
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label>
                             Email *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-regular fa-envelope"></i>
-
                             <input
                                 type="email"
                                 id="customerEmail"
                                 placeholder="Email address"
                                 required
                             >
-
                         </div>
-
                     </div>
-
-
                     <div class="form-group">
-
                         <label>
                             Mobile Number *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-solid fa-phone"></i>
-
                             <input
                                 type="tel"
                                 id="customerMobile"
                                 placeholder="Mobile number"
                                 required
                             >
-
                         </div>
-
                     </div>
-
                 </div>
-
-
-
                 <!-- PASSWORD -->
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label>
                             Create New Password *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-solid fa-lock"></i>
-
                             <input
                                 type="password"
                                 id="customerPassword"
                                 placeholder="Create password"
                                 required
                             >
-
                             <button
                                 type="button"
                                 class="password-toggle"
                                 onclick="togglePassword('customerPassword', this)">
-
                                 <i class="fa-regular fa-eye"></i>
-
                             </button>
-
                         </div>
-
                     </div>
-
-
                     <div class="form-group">
-
                         <label>
                             Re-enter Password *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-solid fa-lock"></i>
-
                             <input
                                 type="password"
                                 id="customerConfirmPassword"
                                 placeholder="Confirm password"
                                 required
                             >
-
                         </div>
-
                     </div>
-
                 </div>
-
-
-
                 <!-- ADDRESS -->
-
                 <div class="form-group">
-
                     <label>
                         Address *
                     </label>
@@ -1558,530 +979,325 @@
                     <h2>
                         Create Seller Account
                     </h2>
-
                     <p>
                         Bring your local store online.
                     </p>
-
                 </div>
-
             </div>
-
-
-            <form onsubmit="createSellerAccount(event)">
-
-
+            <form action="/account" onsubmit="createSellerAccount(event)" method="POST">
                 <!-- ================= PERSONAL INFORMATION ================= -->
-
                 <div class="form-section-title">
-
                     <i class="fa-regular fa-user"></i>
-
                     Personal Information
-
                 </div>
-
-
                 <!-- NAME -->
-
                 <div class="form-group">
-
                     <label>
                         Full Name *
                     </label>
-
                     <div class="input-box">
-
                         <i class="fa-regular fa-user"></i>
-
                         <input
                             type="text"
                             id="sellerName"
                             placeholder="Enter your full name"
                             required
                         >
-
                     </div>
-
                 </div>
 
-
-
                 <!-- EMAIL + MOBILE -->
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label>
                             Email *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-regular fa-envelope"></i>
-
                             <input
                                 type="email"
                                 id="sellerEmail"
                                 placeholder="Email address"
                                 required
                             >
-
                         </div>
-
                     </div>
-
-
                     <div class="form-group">
-
                         <label>
                             Mobile Number *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-solid fa-phone"></i>
-
                             <input
                                 type="tel"
                                 id="sellerMobile"
                                 placeholder="Mobile number"
                                 required
                             >
-
                         </div>
-
                     </div>
-
                 </div>
-
-
-
                 <!-- PASSWORD -->
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label>
                             Create New Password *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-solid fa-lock"></i>
-
                             <input
                                 type="password"
                                 id="sellerPassword"
                                 placeholder="Create password"
                                 required
                             >
-
                             <button
                                 type="button"
                                 class="password-toggle"
                                 onclick="togglePassword('sellerPassword', this)">
-
                                 <i class="fa-regular fa-eye"></i>
-
                             </button>
-
                         </div>
-
                     </div>
-
-
                     <div class="form-group">
-
                         <label>
                             Re-enter Password *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-solid fa-lock"></i>
-
                             <input
                                 type="password"
                                 id="sellerConfirmPassword"
                                 placeholder="Confirm password"
                                 required
                             >
-
                         </div>
-
                     </div>
-
                 </div>
-
-
-
                 <!-- ================= BUSINESS INFORMATION ================= -->
-
                 <div class="form-section-title business-title">
-
                     <i class="fa-solid fa-store"></i>
-
                     Business Information
-
                 </div>
-
-
-
                 <!-- BUSINESS NAME -->
-
                 <div class="form-group">
-
                     <label>
                         Business Name *
                     </label>
-
                     <div class="input-box">
-
                         <i class="fa-solid fa-store"></i>
-
                         <input
                             type="text"
                             id="businessName"
                             placeholder="Enter your shop/business name"
                             required
                         >
-
                     </div>
-
                 </div>
-
-
-
                 <!-- BUSINESS PHONE -->
-
                 <div class="form-group">
-
                     <label>
                         Business Phone Number *
                     </label>
-
                     <div class="input-box">
-
                         <i class="fa-solid fa-phone"></i>
-
                         <input
                             type="tel"
                             id="businessPhone"
                             placeholder="Business contact number"
                             required
                         >
-
                     </div>
-
                 </div>
-
-
-
                 <!-- BUSINESS ADDRESS -->
-
                 <div class="form-group">
-
                     <label>
                         Business Address *
                     </label>
-
                     <div class="input-box textarea-box">
-
                         <i class="fa-solid fa-location-dot"></i>
-
                         <textarea
                             id="businessAddress"
                             placeholder="Shop address"
                             required></textarea>
-
                     </div>
-
                 </div>
-
-
-
                 <!-- STATE + CITY -->
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label>
                             Select State *
                         </label>
-
                         <select
                             id="sellerState"
                             required>
-
                             <option value="">
                                 Select State
                             </option>
-
                             <option>
                                 Bihar
                             </option>
-
                             <option>
                                 Jharkhand
                             </option>
-
                             <option>
                                 West Bengal
                             </option>
-
                             <option>
                                 Uttar Pradesh
                             </option>
-
                             <option>
                                 Delhi
                             </option>
-
                             <option>
                                 Maharashtra
                             </option>
-
                             <option>
                                 Other
                             </option>
-
                         </select>
-
                     </div>
-
-
                     <div class="form-group">
-
                         <label>
                             City *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-solid fa-city"></i>
-
                             <input
                                 type="text"
                                 id="sellerCity"
                                 placeholder="City"
                                 required
                             >
-
                         </div>
-
                     </div>
-
                 </div>
-
-
-
                 <!-- AREA + PIN -->
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label>
                             Area Name *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-solid fa-map-pin"></i>
-
                             <input
                                 type="text"
                                 id="sellerArea"
                                 placeholder="Area / Locality"
                                 required
                             >
-
                         </div>
-
                     </div>
-
-
                     <div class="form-group">
-
                         <label>
                             PIN Code / ZIP Code *
                         </label>
-
                         <div class="input-box">
-
                             <i class="fa-solid fa-hashtag"></i>
-
                             <input
                                 type="text"
                                 id="sellerPin"
                                 placeholder="PIN / ZIP code"
                                 required
                             >
-
                         </div>
-
                     </div>
-
                 </div>
-
-
-
                 <!-- SHOP PHOTO -->
-
                 <div class="form-group">
-
                     <label>
                         Shop Photo
                     </label>
-
                     <label class="photo-upload">
-
                         <i class="fa-solid fa-cloud-arrow-up"></i>
-
                         <span>
                             Upload Shop Photo
                         </span>
-
                         <small>
                             JPG, PNG up to 5MB
                         </small>
-
                         <input
                             type="file"
                             id="shopPhoto"
                             accept="image/png,image/jpeg"
                             onchange="showFileName(this)"
                         >
-
                     </label>
-
                     <div
                         id="fileName"
                         class="file-name">
                     </div>
-
                 </div>
-
-
-
                 <!-- TERMS -->
-
                 <label class="terms">
-
                     <input
                         type="checkbox"
                         required
                     >
-
                     <span>
                         I agree to the Terms & Conditions
                         and Privacy Policy.
                     </span>
-
                 </label>
-
-
                 <button
                     type="submit"
                     class="auth-submit">
-
                     Create Seller Account
-
                     <i class="fa-solid fa-arrow-right"></i>
-
                 </button>
-
             </form>
-
         </div>
-
-
-
         <!-- =================================================
              FORGOT PASSWORD
         ================================================== -->
 
         <div class="auth-page hidden"
              id="forgotPasswordPage">
-
             <div class="auth-header">
-
                 <div class="auth-logo">
                     <i class="fa-solid fa-key"></i>
                 </div>
-
                 <h2>
                     Forgot Password?
                 </h2>
-
                 <p>
                     Enter your email and we'll help you
                     reset your password.
                 </p>
-
             </div>
-
-
-            <form onsubmit="resetPassword(event)">
-
+            <form action="/account" onsubmit="resetPassword(event) " method="POST">
                 <div class="form-group">
-
                     <label>
                         Email Address
                     </label>
-
                     <div class="input-box">
-
                         <i class="fa-regular fa-envelope"></i>
-
                         <input
                             type="email"
                             id="forgotEmail"
                             placeholder="Enter your registered email"
                             required
                         >
-
                     </div>
-
                 </div>
-
-
                 <button
                     type="submit"
                     class="auth-submit">
-
                     Send Reset Link
-
                     <i class="fa-solid fa-paper-plane"></i>
-
                 </button>
-
             </form>
-
-
             <div class="back-login">
-
                 Remember your password?
-
                 <button onclick="showLogin()">
                     Login
                 </button>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
-<script src="auth.js"></script>
-
-<script src="about.js"></script>
+<script src="{{url_for('static',filename='js/auth.js')}}"></script>
+<script src="{{url_for('static',filename='js/home.js')}}"></script>
 
 </body>
-
 </html>

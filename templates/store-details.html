@@ -15,10 +15,8 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Existing website CSS -->
-    <link rel="stylesheet" href="home.css">
-
-    <!-- Store Details CSS -->
-    <link rel="stylesheet" href="store-details.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stote-details.css') }}">
 
 </head>
 
@@ -51,22 +49,20 @@
 
     <nav>
 
-        <a href="home.html">Home</a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('stores') }}">stores</a>
+        <a href="{{ url_for('categories') }}">categories</a>
+        <a href="{{ url_for('offers') }}">offers</a>
 
-        <a href="stores.html">Stores</a>
 
-        <a href="categories.html">Categories</a>
-
-        <a href="offers.html">Offers</a>
-
-        <a href="about.html">About Us</a>
+        <a href="{{ url_for('about') }}">About Us</a>
 
     </nav>
 
 
     <div class="navbar-actions">
 
-        <a href="cart.html" class="cart">
+        <a href="{{url_for('cart')}}" class="cart">
     <i class="fa-solid fa-cart-shopping"></i>
     <span id="cartCount">0</span>
 </a>
@@ -296,7 +292,8 @@
 
 
 
-<script src="store-details.js"></script>
+
+<script src="{{url_for('static',filename='js/store-details.js')}}"></script>
 
 </body>
 

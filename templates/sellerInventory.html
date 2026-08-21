@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Inventory - NearBy Dukan</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sellerDashboard.css') }}">
+</head>
+
+<body>
+
+<div class="seller-layout">
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-shop"></i>
+</div>
+
+<div>
+<h2>NearBy Dukan</h2>
+<span>Seller Panel</span>
+</div>
+
+</div>
+
+<nav class="sidebar-nav">
+
+<a href="{{ url_for('sellerDashboard') class="nav-link">
+<i class="fa-solid fa-chart-pie"></i>
+Dashboard
+</a>
+
+<a href="{{url('sellerStore')}}" class="nav-link">
+<i class="fa-solid fa-store"></i>
+My Store
+</a>
+
+<a href="{{url_for('sellerProduct')}}" class="nav-link">
+<i class="fa-solid fa-box"></i>
+Products
+</a>
+
+<a href="{{url_for('sellerInventory')}}" class="nav-link">
+<i class="fa-solid fa-warehouse"></i>
+Inventory
+</a>
+
+<a href="{{url_for('sellerOrder')}}" class="nav-link">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</a>
+
+<a href="{{url_for('sellerOffer')}}" class="nav-link">
+<i class="fa-solid fa-tags"></i>
+Offers
+</a>
+
+<a href="{{url_for('sellerCustomer')}}" class="nav-link">
+<i class="fa-solid fa-users"></i>
+Customers
+</a>
+
+<a href="{{url_for('sellerAnalytics')}}" class="nav-link active">
+<i class="fa-solid fa-chart-line"></i>
+Analytics
+</a>
+
+<a href="{{url_for('sellerSetting')}}" class="nav-link">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+
+</nav>
+
+</aside>
+
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div class="topbar-left">
+
+<h1>Inventory</h1>
+
+<p>
+Monitor and update your stock
+</p>
+
+</div>
+
+</header>
+
+
+<section class="dashboard-content">
+
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<div class="stat-icon green">
+<i class="fa-solid fa-boxes-stacked"></i>
+</div>
+
+<div>
+<span>Total Items</span>
+<h3>128</h3>
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon orange">
+<i class="fa-solid fa-triangle-exclamation"></i>
+</div>
+
+<div>
+<span>Low Stock</span>
+<h3>7</h3>
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon red">
+<i class="fa-solid fa-circle-xmark"></i>
+</div>
+
+<div>
+<span>Out of Stock</span>
+<h3>3</h3>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="dashboard-card">
+
+<div class="card-header">
+
+<div>
+<h3>Inventory Management</h3>
+<p>Update product stock quantity</p>
+</div>
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Product</th>
+<th>Current Stock</th>
+<th>Minimum Stock</th>
+<th>Status</th>
+<th>Update</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+
+<td>Amul Milk</td>
+
+<td>
+<span id="milkStock">3</span>
+</td>
+
+<td>10</td>
+
+<td>
+<span class="status danger">
+Low Stock
+</span>
+</td>
+
+<td>
+
+<button
+class="small-btn"
+onclick="changeStock('milkStock')">
+
+Update
+
+</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Fortune Rice</td>
+
+<td>
+<span id="riceStock">5</span>
+</td>
+
+<td>10</td>
+
+<td>
+<span class="status warning">
+Low Stock
+</span>
+</td>
+
+<td>
+
+<button
+class="small-btn"
+onclick="changeStock('riceStock')">
+
+Update
+
+</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Parle-G Biscuits</td>
+
+<td>
+<span id="biscuitStock">80</span>
+</td>
+
+<td>20</td>
+
+<td>
+<span class="status success">
+Available
+</span>
+</td>
+
+<td>
+
+<button
+class="small-btn"
+onclick="changeStock('biscuitStock')">
+
+Update
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+
+<script src="{{url_for('static',filename='js/sellerDashboard.js')}}"></script>
+
+<script>
+
+function changeStock(id) {
+
+const value =
+prompt("Enter new stock quantity:");
+
+if(value !== null && value !== "") {
+
+document.getElementById(id).innerText =
+value;
+
+alert("Inventory updated successfully.");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

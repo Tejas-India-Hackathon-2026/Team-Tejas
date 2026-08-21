@@ -1,200 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Offers | NearBy Dukan</title>
-
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="offers.css">
-    <link rel="stylesheet" href="auth.css">
-    
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-</head>
-
-
-<body>
-
-
-<!-- ================= NAVBAR ================= -->
-
-<header class="navbar">
-
-    <div class="logo-section">
-
-        <div class="logo-icon">
-            <i class="fa-solid fa-shop"></i>
-        </div>
-
-        <div>
-
-            <div class="logo">
-                NearBy <span>Dukan</span>
-            </div>
-
-            <div class="tagline">
-                Apki Dukan, Ab Online
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="location">
-
-        <i class="fa-solid fa-location-dot"></i>
-
-        <span>
-            Patna, Bihar
-        </span>
-
-    </div>
-
-
-    <nav class="nav-links">
-
-        <a href="home.html">
-            Home
-        </a>
-
-        <a href="stores.html">
-            Stores
-        </a>
-
-        <a href="categories.html">
-            Categories
-        </a>
-
-        <a href="offers.html"
-           class="active">
-            Offers
-        </a>
-
-        <a href="about.html">
-            About Us
-        </a>
-
-    </nav>
-
-
-    <div class="nav-actions">
-
-        <a href="cart.html" class="cart">
-    <i class="fa-solid fa-cart-shopping"></i>
-    <span id="cartCount">0</span>
-        </a>
-
-        <button class="login-btn" onclick="openLoginModal()">
-            Login / Sign Up
-        </button>
-
-    </div>
-
-</header>
+{% include 'header.html'%}
 
 
 
-<!-- ================= OFFER HERO ================= -->
 
-<section class="offer-hero">
+<!-- ================= HERO ================= -->
 
-    <div class="offer-hero-content">
+<section class="about-hero">
+
+    <div class="about-hero-content">
 
         <div class="breadcrumb">
-
-            <a href="home.html">
-                Home
-            </a>
-
+<a href="{{ url_for('home') }}">Home</a>
+            
             <span>/</span>
 
             <strong>
-                Offers
+                About Us
             </strong>
 
         </div>
 
 
-        <span class="offer-label">
-            🔥 TODAY'S BEST DEALS
+        <span class="about-label">
+            🌱 OUR STORY
         </span>
 
 
         <h1>
-            Great Deals From
-            <span>Local Stores</span>
+            Bringing Your
+            <span>Local Dukan</span>
+            Online
         </h1>
 
 
         <p>
-            Apne aas-paas ki dukano se shopping karein
-            aur amazing offers ka fayda uthayein.
+            NearBy Dukan ek digital platform hai jo
+            customers ko unke aas-paas ke local stores
+            se connect karta hai.
         </p>
 
 
-        <button class="shop-offer-btn"
-                onclick="scrollToOffers()">
+        <div class="hero-buttons">
 
-            Explore Offers
+            <button onclick="scrollToMission()">
+                Discover Our Mission
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
 
-            <i class="fa-solid fa-arrow-right"></i>
+            <a href="{{ url_for('stores') }}">stores</a>
+                Explore Stores
+            </a>
 
-        </button>
+        </div>
 
     </div>
 
 
-    <div class="offer-hero-visual">
+    <div class="about-hero-visual">
 
-        <div class="discount-circle">
-
-            <strong>
-                UP TO
-            </strong>
-
-            <span>
-                50%
-            </span>
-
-            <small>
-                OFF
-            </small>
-
+        <div class="shop-building">
+            🏪
         </div>
 
-
-        <div class="hero-shopping">
+        <div class="customer-icon">
             🛒
         </div>
 
-
-        <div class="floating-offer offer-float-one">
-            🏷️ 20% OFF
+        <div class="connection-line">
+            ↔
         </div>
 
-
-        <div class="floating-offer offer-float-two">
-            🚚 FREE DELIVERY
+        <div class="online-card">
+            <i class="fa-solid fa-globe"></i>
+            <span>
+                Local Store
+                <small>Now Online</small>
+            </span>
         </div>
 
     </div>
@@ -203,660 +84,636 @@
 
 
 
-<!-- ================= OFFER TABS ================= -->
+<!-- ================= PROBLEM ================= -->
 
-<section class="offer-section">
+<section class="problem-section"
+         id="mission">
 
-    <div class="offer-tabs">
+    <div class="section-heading center">
 
-        <button class="offer-tab active"
-                onclick="filterOffers('all', this)">
-            All Offers
-        </button>
+        <span>
+            THE PROBLEM
+        </span>
 
-        <button class="offer-tab"
-                onclick="filterOffers('grocery', this)">
-            Grocery
-        </button>
+        <h2>
+            Why Did We Build
+            <strong>NearBy Dukan?</strong>
+        </h2>
 
-        <button class="offer-tab"
-                onclick="filterOffers('food', this)">
-            Food & Bakery
-        </button>
-
-        <button class="offer-tab"
-                onclick="filterOffers('daily', this)">
-            Daily Essentials
-        </button>
-
-        <button class="offer-tab"
-                onclick="filterOffers('delivery', this)">
-            Free Delivery
-        </button>
+        <p>
+            Local stores are an important part of our
+            communities, but many of them still face
+            challenges in the digital world.
+        </p>
 
     </div>
 
-</section>
+
+    <div class="problem-grid">
 
 
+        <div class="problem-card">
 
-<!-- ================= FEATURED OFFERS ================= -->
+            <div class="problem-icon">
+                📱
+            </div>
 
-<section class="offer-section"
-         id="offers">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                Featured Offers
-            </h2>
+            <h3>
+                Limited Online Presence
+            </h3>
 
             <p>
-                Handpicked deals from stores near you
+                Many local shops do not have an easy
+                way to showcase their products online.
             </p>
 
         </div>
 
-        <span>
-            🔥 Limited Time
-        </span>
 
-    </div>
+        <div class="problem-card">
 
-
-    <div class="offer-grid"
-         id="offerGrid">
-
-
-        <!-- OFFER 1 -->
-
-        <div class="offer-card"
-             data-type="grocery">
-
-            <div class="offer-image offer-image-one">
-
-                <span class="discount-tag">
-                    25% OFF
-                </span>
-
-                <button class="offer-heart">
-                    ♡
-                </button>
-
-                <div class="offer-emoji">
-                    🛒
-                </div>
-
-            </div>
-
-
-            <div class="offer-details">
-
-                <div class="offer-store">
-                    Sharma Kirana Store
-                </div>
-
-                <h3>
-                    Get 25% OFF on Grocery
-                </h3>
-
-                <p>
-                    Minimum order ₹499
-                </p>
-
-
-                <div class="offer-footer">
-
-                    <div class="price">
-
-                        <strong>
-                            ₹374
-                        </strong>
-
-                        <del>
-                            ₹499
-                        </del>
-
-                    </div>
-
-                    <button onclick="claimOffer('Grocery25')">
-                        Get Offer
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- OFFER 2 -->
-
-        <div class="offer-card"
-             data-type="food">
-
-            <div class="offer-image offer-image-two">
-
-                <span class="discount-tag">
-                    20% OFF
-                </span>
-
-                <button class="offer-heart">
-                    ♡
-                </button>
-
-                <div class="offer-emoji">
-                    🥐
-                </div>
-
-            </div>
-
-
-            <div class="offer-details">
-
-                <div class="offer-store">
-                    Maa Laxmi Bakery
-                </div>
-
-                <h3>
-                    20% OFF on Bakery Items
-                </h3>
-
-                <p>
-                    Cakes, Bread & Pastries
-                </p>
-
-
-                <div class="offer-footer">
-
-                    <div class="price">
-
-                        <strong>
-                            ₹240
-                        </strong>
-
-                        <del>
-                            ₹300
-                        </del>
-
-                    </div>
-
-                    <button onclick="claimOffer('Bakery20')">
-                        Get Offer
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- OFFER 3 -->
-
-        <div class="offer-card"
-             data-type="daily">
-
-            <div class="offer-image offer-image-three">
-
-                <span class="discount-tag">
-                    ₹100 OFF
-                </span>
-
-                <button class="offer-heart">
-                    ♡
-                </button>
-
-                <div class="offer-emoji">
-                    🥛
-                </div>
-
-            </div>
-
-
-            <div class="offer-details">
-
-                <div class="offer-store">
-                    Kumar Dairy & Sweets
-                </div>
-
-                <h3>
-                    Flat ₹100 OFF
-                </h3>
-
-                <p>
-                    On orders above ₹599
-                </p>
-
-
-                <div class="offer-footer">
-
-                    <div class="price">
-
-                        <strong>
-                            ₹499
-                        </strong>
-
-                        <del>
-                            ₹599
-                        </del>
-
-                    </div>
-
-                    <button onclick="claimOffer('Dairy100')">
-                        Get Offer
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- OFFER 4 -->
-
-        <div class="offer-card"
-             data-type="delivery">
-
-            <div class="offer-image offer-image-four">
-
-                <span class="discount-tag">
-                    FREE
-                </span>
-
-                <button class="offer-heart">
-                    ♡
-                </button>
-
-                <div class="offer-emoji">
-                    🚚
-                </div>
-
-            </div>
-
-
-            <div class="offer-details">
-
-                <div class="offer-store">
-                    Verma General Store
-                </div>
-
-                <h3>
-                    Free Delivery
-                </h3>
-
-                <p>
-                    On orders above ₹299
-                </p>
-
-
-                <div class="offer-footer">
-
-                    <div class="price">
-
-                        <strong>
-                            ₹0
-                        </strong>
-
-                        <del>
-                            ₹40
-                        </del>
-
-                    </div>
-
-                    <button onclick="claimOffer('FREEDELIVERY')">
-                        Get Offer
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- OFFER 5 -->
-
-        <div class="offer-card"
-             data-type="grocery">
-
-            <div class="offer-image offer-image-five">
-
-                <span class="discount-tag">
-                    30% OFF
-                </span>
-
-                <button class="offer-heart">
-                    ♡
-                </button>
-
-                <div class="offer-emoji">
-                    🍚
-                </div>
-
-            </div>
-
-
-            <div class="offer-details">
-
-                <div class="offer-store">
-                    Gupta Provision Store
-                </div>
-
-                <h3>
-                    30% OFF on Rice & Dal
-                </h3>
-
-                <p>
-                    Selected products only
-                </p>
-
-
-                <div class="offer-footer">
-
-                    <div class="price">
-
-                        <strong>
-                            ₹350
-                        </strong>
-
-                        <del>
-                            ₹500
-                        </del>
-
-                    </div>
-
-                    <button onclick="claimOffer('RICE30')">
-                        Get Offer
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- OFFER 6 -->
-
-        <div class="offer-card"
-             data-type="daily">
-
-            <div class="offer-image offer-image-six">
-
-                <span class="discount-tag">
-                    15% OFF
-                </span>
-
-                <button class="offer-heart">
-                    ♡
-                </button>
-
-                <div class="offer-emoji">
-                    🧴
-                </div>
-
-            </div>
-
-
-            <div class="offer-details">
-
-                <div class="offer-store">
-                    Patel Departmental Store
-                </div>
-
-                <h3>
-                    15% OFF Personal Care
-                </h3>
-
-                <p>
-                    Shampoo, Soap & Skincare
-                </p>
-
-
-                <div class="offer-footer">
-
-                    <div class="price">
-
-                        <strong>
-                            ₹425
-                        </strong>
-
-                        <del>
-                            ₹500
-                        </del>
-
-                    </div>
-
-                    <button onclick="claimOffer('CARE15')">
-                        Get Offer
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= COUPON SECTION ================= -->
-
-<section class="coupon-section">
-
-    <div class="coupon-content">
-
-        <span>
-            🎁 EXTRA SAVINGS
-        </span>
-
-        <h2>
-            Use Coupons & Save More
-        </h2>
-
-        <p>
-            Apply these coupons while ordering
-            from participating local stores.
-        </p>
-
-    </div>
-
-
-    <div class="coupon-list">
-
-
-        <div class="coupon-card">
-
-            <div class="coupon-left">
-
-                <strong>
-                    SAVE50
-                </strong>
-
-                <small>
-                    Get ₹50 OFF
-                </small>
-
-            </div>
-
-            <div class="coupon-right">
-
-                <span>
-                    ₹299+ order
-                </span>
-
-                <button onclick="copyCoupon('SAVE50')">
-                    Copy
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="coupon-card">
-
-            <div class="coupon-left">
-
-                <strong>
-                    LOCAL20
-                </strong>
-
-                <small>
-                    20% OFF
-                </small>
-
-            </div>
-
-            <div class="coupon-right">
-
-                <span>
-                    ₹499+ order
-                </span>
-
-                <button onclick="copyCoupon('LOCAL20')">
-                    Copy
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="coupon-card">
-
-            <div class="coupon-left">
-
-                <strong>
-                    FIRST100
-                </strong>
-
-                <small>
-                    ₹100 OFF
-                </small>
-
-            </div>
-
-            <div class="coupon-right">
-
-                <span>
-                    New users
-                </span>
-
-                <button onclick="copyCoupon('FIRST100')">
-                    Copy
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= HOW OFFERS WORK ================= -->
-
-<section class="how-section">
-
-    <div class="section-heading center">
-
-        <h2>
-            How Offers Work
-        </h2>
-
-        <p>
-            Save money in just three simple steps
-        </p>
-
-    </div>
-
-
-    <div class="steps">
-
-
-        <div class="step">
-
-            <div class="step-number">
-                1
-            </div>
-
-            <div class="step-icon">
+            <div class="problem-icon">
                 🔍
             </div>
 
             <h3>
-                Find an Offer
+                Difficult Product Discovery
             </h3>
 
             <p>
-                Browse offers from stores
-                near your location.
+                Customers often don't know which nearby
+                store has the product they need.
             </p>
 
         </div>
 
 
+        <div class="problem-card">
 
-        <div class="step">
-
-            <div class="step-number">
-                2
-            </div>
-
-            <div class="step-icon">
-                🏷️
+            <div class="problem-icon">
+                📦
             </div>
 
             <h3>
-                Claim the Offer
+                Inventory Challenges
             </h3>
 
             <p>
-                Copy the coupon or
-                select the offer.
+                Store owners need a simple way to manage
+                their products and availability.
             </p>
 
         </div>
 
 
+        <div class="problem-card">
 
-        <div class="step">
-
-            <div class="step-number">
-                3
-            </div>
-
-            <div class="step-icon">
-                🛍️
+            <div class="problem-icon">
+                🤝
             </div>
 
             <h3>
-                Shop & Save
+                Customer Connection
             </h3>
 
             <p>
-                Place your order and
-                enjoy your savings.
+                Local businesses need better ways to
+                connect with their nearby customers.
             </p>
 
         </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SOLUTION ================= -->
+
+<section class="solution-section">
+
+    <div class="solution-visual">
+
+        <div class="solution-circle">
+
+            <i class="fa-solid fa-shop"></i>
+
+        </div>
+
+        <div class="solution-mini mini-one">
+            📱
+        </div>
+
+        <div class="solution-mini mini-two">
+            🛒
+        </div>
+
+        <div class="solution-mini mini-three">
+            🚚
+        </div>
+
+    </div>
+
+
+    <div class="solution-content">
+
+        <span class="section-label">
+            OUR SOLUTION
+        </span>
+
+        <h2>
+            One Platform.
+            <span>Many Local Stores.</span>
+        </h2>
+
+        <p>
+            NearBy Dukan local shopkeepers ko digital
+            platform provide karta hai jahan wo apne
+            products, prices, offers aur inventory ko
+            manage kar sakte hain.
+        </p>
+
+        <p>
+            Customers nearby stores discover kar sakte hain,
+            products browse kar sakte hain, offers dekh sakte
+            hain aur convenient way mein order kar sakte hain.
+        </p>
+
+
+        <div class="solution-points">
+
+            <div>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                    Discover nearby stores
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                    Browse products & categories
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                    Find local offers
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                    Support local businesses
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="works-section">
+
+    <div class="section-heading center">
+
+        <span>
+            HOW IT WORKS
+        </span>
+
+        <h2>
+            Simple For
+            <strong>Everyone</strong>
+        </h2>
+
+        <p>
+            Customers aur shopkeepers dono ke liye
+            simple aur easy experience.
+        </p>
+
+    </div>
+
+
+    <div class="works-container">
+
+
+        <!-- CUSTOMER -->
+
+        <div class="works-box">
+
+            <div class="works-title">
+
+                <div class="works-icon">
+                    🛒
+                </div>
+
+                <div>
+
+                    <h3>
+                        For Customers
+                    </h3>
+
+                    <p>
+                        Shop nearby with ease
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-step">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+                    <strong>
+                        Find Nearby Stores
+                    </strong>
+
+                    <small>
+                        Apne location ke paas stores discover karein.
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="work-step">
+
+                <span>
+                    02
+                </span>
+
+                <div>
+                    <strong>
+                        Browse Products
+                    </strong>
+
+                    <small>
+                        Products, categories aur prices dekhein.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-step">
+
+                <span>
+                    03
+                </span>
+
+                <div>
+                    <strong>
+                        Order & Save
+                    </strong>
+
+                    <small>
+                        Offers ka benefit lekar order karein.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STORE OWNER -->
+
+        <div class="works-box store-box">
+
+            <div class="works-title">
+
+                <div class="works-icon">
+                    🏪
+                </div>
+
+                <div>
+
+                    <h3>
+                        For Store Owners
+                    </h3>
+
+                    <p>
+                        Take your shop online
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-step">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <strong>
+                        Create Store Profile
+                    </strong>
+
+                    <small>
+                        Apni shop ko platform par register karein.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-step">
+
+                <span>
+                    02
+                </span>
+
+                <div>
+
+                    <strong>
+                        Manage Products
+                    </strong>
+
+                    <small>
+                        Products, prices aur inventory manage karein.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-step">
+
+                <span>
+                    03
+                </span>
+
+                <div>
+
+                    <strong>
+                        Reach More Customers
+                    </strong>
+
+                    <small>
+                        Nearby customers ke saath connect karein.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= VALUES ================= -->
+
+<section class="values-section">
+
+    <div class="section-heading center">
+
+        <span>
+            OUR VALUES
+        </span>
+
+        <h2>
+            What We
+            <strong>Believe In</strong>
+        </h2>
+
+    </div>
+
+
+    <div class="values-grid">
+
+
+        <div class="value-card">
+
+            <div>
+                🤝
+            </div>
+
+            <h3>
+                Support Local
+            </h3>
+
+            <p>
+                Local businesses ko grow karne mein
+                help karna hamara core mission hai.
+            </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+            <div>
+                ❤️
+            </div>
+
+            <h3>
+                Community First
+            </h3>
+
+            <p>
+                Customers aur local shopkeepers ke
+                beech strong connection banana.
+            </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+            <div>
+                ⚡
+            </div>
+
+            <h3>
+                Simplicity
+            </h3>
+
+            <p>
+                Technology ko simple aur accessible
+                banana for everyone.
+            </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+            <div>
+                🌱
+            </div>
+
+            <h3>
+                Grow Together
+            </h3>
+
+            <p>
+                Customers aur businesses dono ke
+                growth ko support karna.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= IMPACT ================= -->
+
+<section class="impact-section">
+
+    <div class="impact-content">
+
+        <span>
+            OUR VISION
+        </span>
+
+        <h2>
+            Har Local Dukan Ko
+            <strong>Digital Banana</strong>
+        </h2>
+
+        <p>
+            Humara vision ek aisa local commerce ecosystem
+            banana hai jahan customers ko nearby products
+            easily mil sakein aur local businesses ko
+            digital world mein grow karne ka opportunity mile.
+        </p>
+
+
+        <button onclick="goToStores()">
+            Start Shopping
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+
+    <div class="impact-stats">
+
+        <div>
+
+            <strong>
+                100+
+            </strong>
+
+            <span>
+                Local Stores
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                1000+
+            </strong>
+
+            <span>
+                Products
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                10+
+            </strong>
+
+            <span>
+                Categories
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                1
+            </strong>
+
+            <span>
+                Local Community
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="about-cta">
+
+    <div>
+
+        <span>
+            SHOP LOCAL • SUPPORT LOCAL
+        </span>
+
+        <h2>
+            Ready to Discover
+            Your Nearby Dukan?
+        </h2>
+
+        <p>
+            Apne area ke local stores explore karein
+            aur shopping ko simple banayein.
+        </p>
+
+        <button onclick="goToStores()">
+            Explore Nearby Stores
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
 
     </div>
 
@@ -884,25 +741,13 @@
 
     <div class="footer-links">
 
-        <a href="index.html">
-            Home
-        </a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('stores') }}">stores</a>
+        <a href="{{ url_for('categories') }}">categories</a>
+        <a href="{{ url_for('offers') }}">offers</a>
 
-        <a href="stores.html">
-            Stores
-        </a>
 
-        <a href="categories.html">
-            Categories
-        </a>
-
-        <a href="offers.html">
-            Offers
-        </a>
-
-        <a href="#">
-            Contact
-        </a>
+        <a href="{{ url_for('about') }}">About Us</a>
 
     </div>
 
@@ -951,7 +796,7 @@
             </div>
 
 
-            <form onsubmit="loginUser(event)">
+            <form action="/login" onsubmit="loginUser(event)" method="POST">
 
                 <!-- EMAIL -->
 
@@ -967,6 +812,7 @@
 
                         <input
                             type="email"
+                            name="email"
                             id="loginEmail"
                             placeholder="Enter your email"
                             required
@@ -996,7 +842,7 @@
 
                         </button>
 
-                    </div>
+                    </div> 
 
 
                     <div class="input-box">
@@ -1005,10 +851,11 @@
 
                         <input
                             type="password"
+                            name="password"
                             id="loginPassword"
                             placeholder="Enter your password"
                             required
-                        >
+                        > 
 
                         <button
                             type="button"
@@ -1066,7 +913,7 @@
 
                     </div>
 
-                </div>
+                </div> 
 
 
                 <button
@@ -1139,7 +986,7 @@
 
                 <!-- CUSTOMER -->
 
-                <button
+                 <button
                     class="account-choice customer-choice"
                     onclick="showCustomerSignup()">
 
@@ -1163,7 +1010,7 @@
                     <i class="fa-solid fa-chevron-right"></i>
 
                 </button>
-
+ 
 
 
                 <!-- SELLER -->
@@ -1193,7 +1040,7 @@
 
                 </button>
 
-            </div>
+            </div> 
 
 
             <div class="back-login">
@@ -1212,12 +1059,11 @@
         </div>
 
 
-
         <!-- =================================================
              CUSTOMER SIGN UP
         ================================================== -->
 
-        <div class="auth-page signup-page hidden"
+         <div class="auth-page signup-page hidden"
              id="customerSignupPage">
 
             <div class="signup-heading">
@@ -1242,15 +1088,15 @@
 
                 </div>
 
-            </div>
+            </div> 
 
 
-            <form onsubmit="createCustomerAccount(event)">
+            <form action="/register" onsubmit="createCustomerAccount(event)" method="POST">
 
 
                 <!-- FULL NAME -->
 
-                <div class="form-group">
+                 <div class="form-group">
 
                     <label>
                         Full Name *
@@ -1263,19 +1109,20 @@
                         <input
                             type="text"
                             id="customerName"
+                            name="cus_name"
                             placeholder="Enter your full name"
                             required
                         >
 
                     </div>
 
-                </div>
-
+                </div> 
+ 
 
 
                 <!-- EMAIL + MOBILE -->
 
-                <div class="form-row">
+                 <div class="form-row">
 
                     <div class="form-group">
 
@@ -1289,6 +1136,7 @@
 
                             <input
                                 type="email"
+                                name="cus_email"
                                 id="customerEmail"
                                 placeholder="Email address"
                                 required
@@ -1303,7 +1151,7 @@
 
                         <label>
                             Mobile Number *
-                        </label>
+                        </label> 
 
                         <div class="input-box">
 
@@ -1312,6 +1160,7 @@
                             <input
                                 type="tel"
                                 id="customerMobile"
+                                name="mobile"
                                 placeholder="Mobile number"
                                 required
                             >
@@ -1322,11 +1171,11 @@
 
                 </div>
 
-
+ 
 
                 <!-- PASSWORD -->
 
-                <div class="form-row">
+                 <div class="form-row">
 
                     <div class="form-group">
 
@@ -1340,6 +1189,7 @@
 
                             <input
                                 type="password"
+                                name="new_password"
                                 id="customerPassword"
                                 placeholder="Create password"
                                 required
@@ -1354,7 +1204,7 @@
 
                             </button>
 
-                        </div>
+                        </div> 
 
                     </div>
 
@@ -1371,6 +1221,7 @@
 
                             <input
                                 type="password"
+                                name="re_password"
                                 id="customerConfirmPassword"
                                 placeholder="Confirm password"
                                 required
@@ -1380,7 +1231,7 @@
 
                     </div>
 
-                </div>
+                </div> 
 
 
 
@@ -1398,18 +1249,19 @@
 
                         <textarea
                             id="customerAddress"
+                            name="address"
                             placeholder="House / Street / Landmark"
                             required></textarea>
 
                     </div>
 
                 </div>
-
+ 
 
 
                 <!-- AREA + CITY -->
 
-                <div class="form-row">
+                 <div class="form-row">
 
                     <div class="form-group">
 
@@ -1423,6 +1275,7 @@
 
                             <input
                                 type="text"
+                                name="area"
                                 id="customerArea"
                                 placeholder="Area / Locality"
                                 required
@@ -1430,10 +1283,10 @@
 
                         </div>
 
-                    </div>
+                    </div> 
 
 
-                    <div class="form-group">
+                     <div class="form-group">
 
                         <label>
                             City *
@@ -1445,6 +1298,7 @@
 
                             <input
                                 type="text"
+                                name="city"
                                 id="customerCity"
                                 placeholder="City"
                                 required
@@ -1455,12 +1309,12 @@
                     </div>
 
                 </div>
-
+ 
 
 
                 <!-- STATE + PIN -->
 
-                <div class="form-row">
+                 <div class="form-row">
 
                     <div class="form-group">
 
@@ -1470,6 +1324,7 @@
 
                         <select
                             id="customerState"
+                            name="state"
                             required>
 
                             <option value="">
@@ -1506,7 +1361,7 @@
 
                         </select>
 
-                    </div>
+                    </div> 
 
 
                     <div class="form-group">
@@ -1521,6 +1376,7 @@
 
                             <input
                                 type="text"
+                                name="pincode"
                                 id="customerPin"
                                 placeholder="PIN / ZIP code"
                                 required
@@ -1531,7 +1387,7 @@
                     </div>
 
                 </div>
-
+ 
 
 
                 <!-- TERMS -->
@@ -1563,7 +1419,7 @@
 
             </form>
 
-        </div>
+        </div> 
 
 
 
@@ -1571,7 +1427,7 @@
              SELLER SIGN UP
         ================================================== -->
 
-        <div class="auth-page signup-page hidden"
+         <div class="auth-page signup-page hidden"
              id="sellerSignupPage">
 
             <div class="signup-heading">
@@ -1599,7 +1455,7 @@
             </div>
 
 
-            <form onsubmit="createSellerAccount(event)">
+            <form action="/account" onsubmit="createSellerAccount(event)" method="POST"> 
 
 
                 <!-- ================= PERSONAL INFORMATION ================= -->
@@ -1615,7 +1471,7 @@
 
                 <!-- NAME -->
 
-                <div class="form-group">
+                 <div class="form-group">
 
                     <label>
                         Full Name *
@@ -1634,13 +1490,13 @@
 
                     </div>
 
-                </div>
+                </div> 
 
 
 
                 <!-- EMAIL + MOBILE -->
 
-                <div class="form-row">
+                 <div class="form-row">
 
                     <div class="form-group">
 
@@ -1661,10 +1517,10 @@
 
                         </div>
 
-                    </div>
+                    </div> 
 
 
-                    <div class="form-group">
+                     <div class="form-group">
 
                         <label>
                             Mobile Number *
@@ -1683,15 +1539,15 @@
 
                         </div>
 
-                    </div>
+                    </div> 
 
-                </div>
+                 </div> 
 
 
 
                 <!-- PASSWORD -->
 
-                <div class="form-row">
+                 <div class="form-row">
 
                     <div class="form-group">
 
@@ -1721,10 +1577,10 @@
 
                         </div>
 
-                    </div>
+                    </div> 
 
 
-                    <div class="form-group">
+                     <div class="form-group">
 
                         <label>
                             Re-enter Password *
@@ -1746,12 +1602,12 @@
                     </div>
 
                 </div>
-
+ 
 
 
                 <!-- ================= BUSINESS INFORMATION ================= -->
 
-                <div class="form-section-title business-title">
+                 <div class="form-section-title business-title">
 
                     <i class="fa-solid fa-store"></i>
 
@@ -1759,11 +1615,11 @@
 
                 </div>
 
-
+ 
 
                 <!-- BUSINESS NAME -->
 
-                <div class="form-group">
+                 <div class="form-group">
 
                     <label>
                         Business Name *
@@ -1788,7 +1644,7 @@
 
                 <!-- BUSINESS PHONE -->
 
-                <div class="form-group">
+                 <div class="form-group">
 
                     <label>
                         Business Phone Number *
@@ -1808,7 +1664,7 @@
                     </div>
 
                 </div>
-
+ 
 
 
                 <!-- BUSINESS ADDRESS -->
@@ -1831,7 +1687,7 @@
                     </div>
 
                 </div>
-
+ 
 
 
                 <!-- STATE + CITY -->
@@ -1882,10 +1738,10 @@
 
                         </select>
 
-                    </div>
+                    </div> 
 
 
-                    <div class="form-group">
+                     <div class="form-group">
 
                         <label>
                             City *
@@ -1906,13 +1762,13 @@
 
                     </div>
 
-                </div>
+                </div> 
 
 
 
                 <!-- AREA + PIN -->
 
-                <div class="form-row">
+                 <div class="form-row">
 
                     <div class="form-group">
 
@@ -1933,10 +1789,10 @@
 
                         </div>
 
-                    </div>
+                    </div> 
 
 
-                    <div class="form-group">
+                     <div class="form-group">
 
                         <label>
                             PIN Code / ZIP Code *
@@ -1958,12 +1814,12 @@
                     </div>
 
                 </div>
-
+ 
 
 
                 <!-- SHOP PHOTO -->
 
-                <div class="form-group">
+                 <div class="form-group">
 
                     <label>
                         Shop Photo
@@ -1995,13 +1851,13 @@
                         class="file-name">
                     </div>
 
-                </div>
+                </div> 
 
 
 
                 <!-- TERMS -->
 
-                <label class="terms">
+                 <label class="terms">
 
                     <input
                         type="checkbox"
@@ -2028,7 +1884,7 @@
 
             </form>
 
-        </div>
+        </div> 
 
 
 
@@ -2054,10 +1910,10 @@
                     reset your password.
                 </p>
 
-            </div>
+            </div> 
 
 
-            <form onsubmit="resetPassword(event)">
+             <form onsubmit="resetPassword(event)">
 
                 <div class="form-group">
 
@@ -2079,9 +1935,9 @@
                     </div>
 
                 </div>
+ 
 
-
-                <button
+                 <button
                     type="submit"
                     class="auth-submit">
 
@@ -2092,7 +1948,7 @@
                 </button>
 
             </form>
-
+ 
 
             <div class="back-login">
 
@@ -2106,13 +1962,11 @@
 
         </div>
 
-    </div>
+    </div> 
 
-</div>
-<script src="auth.js"></script>
+<!-- </div> -->
+<script src="{{url_for('static',filename='js/auth.js')}}"></script>
+<script src="{{url_for('static',filename='js/about.js')}}"></script>
 
-<script src="offers.js"></script>
 
-</body>
 
-</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Offers - NearBy Dukan</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sellerDashboard.css') }}">
+</head>
+
+<body>
+
+<div class="seller-layout">
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-shop"></i>
+</div>
+
+<div>
+<h2>NearBy Dukan</h2>
+<span>Seller Panel</span>
+</div>
+
+</div>
+
+<nav class="sidebar-nav">
+
+<a href="{{ url_for('sellerDashboard') class="nav-link">
+<i class="fa-solid fa-chart-pie"></i>
+Dashboard
+</a>
+
+<a href="{{url('sellerStore')}}" class="nav-link">
+<i class="fa-solid fa-store"></i>
+My Store
+</a>
+
+<a href="{{url_for('sellerProduct')}}" class="nav-link">
+<i class="fa-solid fa-box"></i>
+Products
+</a>
+
+<a href="{{url_for('sellerInventory')}}" class="nav-link">
+<i class="fa-solid fa-warehouse"></i>
+Inventory
+</a>
+
+<a href="{{url_for('sellerOrder')}}" class="nav-link">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</a>
+
+<a href="{{url_for('sellerOffer')}}" class="nav-link">
+<i class="fa-solid fa-tags"></i>
+Offers
+</a>
+
+<a href="{{url_for('sellerCustomer')}}" class="nav-link">
+<i class="fa-solid fa-users"></i>
+Customers
+</a>
+
+<a href="{{url_for('sellerAnalytics')}}" class="nav-link active">
+<i class="fa-solid fa-chart-line"></i>
+Analytics
+</a>
+
+<a href="{{url_for('sellerSetting')}}" class="nav-link">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+</nav>
+
+</aside>
+
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div class="topbar-left">
+
+<h1>Offers</h1>
+
+<p>
+Create and manage store offers
+</p>
+
+</div>
+
+</header>
+
+
+<section class="dashboard-content">
+
+
+<div class="welcome-card">
+
+<div>
+
+<span class="welcome-label">
+OFFERS
+</span>
+
+<h2>
+Promote Your Products
+</h2>
+
+<p>
+Create attractive offers for nearby customers.
+</p>
+
+</div>
+
+<button
+class="primary-btn"
+onclick="createOffer()">
+
+<i class="fa-solid fa-plus"></i>
+Create Offer
+
+</button>
+
+</div>
+
+
+<div class="dashboard-card">
+
+<div class="card-header">
+
+<div>
+
+<h3>Active Offers</h3>
+
+<p>
+Current offers running in your store
+</p>
+
+</div>
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Offer</th>
+<th>Discount</th>
+<th>Products</th>
+<th>Start Date</th>
+<th>End Date</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Weekend Sale</strong>
+</td>
+
+<td>20%</td>
+
+<td>15 Products</td>
+
+<td>18 Aug</td>
+
+<td>25 Aug</td>
+
+<td>
+<span class="status success">
+Active
+</span>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Back to School</strong>
+</td>
+
+<td>15%</td>
+
+<td>25 Products</td>
+
+<td>20 Aug</td>
+
+<td>31 Aug</td>
+
+<td>
+<span class="status success">
+Active
+</span>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<strong>First Order</strong>
+</td>
+
+<td>10%</td>
+
+<td>All Products</td>
+
+<td>01 Aug</td>
+
+<td>31 Aug</td>
+
+<td>
+<span class="status success">
+Active
+</span>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+<script src="{{url_for('static',filename='js/sellerDashboard.js')}}"></script>
+<script>
+
+function createOffer() {
+
+alert("Create Offer form will open here.");
+}
+</script>
+</body>
+</html>

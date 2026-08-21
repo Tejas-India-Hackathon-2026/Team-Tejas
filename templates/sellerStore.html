@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>My Store - NearBy Dukan</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sellerDashboard.css') }}">
+</head>
+
+<body>
+
+<div class="seller-layout">
+
+<aside class="sidebar">
+
+    <div class="sidebar-logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-shop"></i>
+        </div>
+
+        <div>
+            <h2>NearBy Dukan</h2>
+            <span>Seller Panel</span>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="{{ url_for('sellerDashboard') class="nav-link">
+<i class="fa-solid fa-chart-pie"></i>
+Dashboard
+</a>
+
+<a href="{{url('sellerStore')}}" class="nav-link">
+<i class="fa-solid fa-store"></i>
+My Store
+</a>
+
+<a href="{{url_for('sellerProduct')}}" class="nav-link">
+<i class="fa-solid fa-box"></i>
+Products
+</a>
+
+<a href="{{url_for('sellerInventory')}}" class="nav-link">
+<i class="fa-solid fa-warehouse"></i>
+Inventory
+</a>
+
+<a href="{{url_for('sellerOrder')}}" class="nav-link">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</a>
+
+<a href="{{url_for('sellerOffer')}}" class="nav-link">
+<i class="fa-solid fa-tags"></i>
+Offers
+</a>
+
+<a href="{{url_for('sellerCustomer')}}" class="nav-link">
+<i class="fa-solid fa-users"></i>
+Customers
+</a>
+
+<a href="{{url_for('sellerAnalytics')}}" class="nav-link active">
+<i class="fa-solid fa-chart-line"></i>
+Analytics
+</a>
+
+<a href="{{url_for('sellerSetting')}}" class="nav-link">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <button class="logout-btn"
+        onclick="logoutSeller()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<main class="main-content">
+
+<header class="topbar">
+
+    <div class="topbar-left">
+
+        <h1>My Store</h1>
+
+        <p>
+            Manage your store information
+        </p>
+
+    </div>
+
+</header>
+
+
+<section class="dashboard-content">
+
+<div class="dashboard-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h3>Store Information</h3>
+
+            <p>
+                Keep your store information updated
+            </p>
+
+        </div>
+
+        <button
+        class="primary-btn"
+        onclick="saveStore()">
+
+            Save Changes
+
+        </button>
+
+    </div>
+
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label>Business Name</label>
+
+            <input
+            id="businessName"
+            value="Sharma Kirana Store">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Owner Name</label>
+
+            <input
+            id="ownerName"
+            value="Rajesh Sharma">
+
+        </div>
+
+    </div>
+
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label>Business Phone</label>
+
+            <input
+            id="businessPhone"
+            value="9876543210">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Email</label>
+
+            <input
+            id="businessEmail"
+            value="sharma@example.com">
+
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>Business Address</label>
+
+        <textarea
+        id="businessAddress">
+Main Road, Near Bus Stand
+        </textarea>
+
+    </div>
+
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label>Area</label>
+
+            <input
+            id="area"
+            value="Kankarbagh">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>City</label>
+
+            <input
+            id="city"
+            value="Patna">
+
+        </div>
+
+    </div>
+
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label>State</label>
+
+            <select id="state">
+
+                <option>Bihar</option>
+                <option>Jharkhand</option>
+                <option>West Bengal</option>
+                <option>Uttar Pradesh</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>PIN Code</label>
+
+            <input
+            id="pin"
+            value="800020">
+
+        </div>
+
+    </div>
+
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label>Opening Time</label>
+
+            <input
+            type="time"
+            value="08:00">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Closing Time</label>
+
+            <input
+            type="time"
+            value="21:00">
+
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>Store Status</label>
+
+        <select>
+
+            <option>Open</option>
+            <option>Closed</option>
+
+        </select>
+
+    </div>
+
+</div>
+
+
+<div class="dashboard-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h3>Shop Photo</h3>
+
+            <p>
+                Upload your store photo
+            </p>
+
+        </div>
+
+    </div>
+
+    <input type="file"
+           accept="image/*">
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="{{url_for('static',filename='js/sellerDashboard.js')}}"></script>
+
+<script>
+
+function saveStore() {
+
+    alert("Store information saved successfully!");
+
+}
+
+</script>
+
+</body>
+</html>
